@@ -1,75 +1,60 @@
-# Nuxt Minimal Starter
+# Catálogo Mujeres Documentalistas en México (1970-1985)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Proyecto coordinado por el Laboratorio Audiovisual de Investigación Social (LAIS) del Instituto Mora.
 
-## Setup
+Con la finalidad de contribuir al conocimiento del trabajo documental que hicieron las mujeres entre 1970 y 1985 en México, enfatizando las diferentes actividades (realización, producción, cámara, sonido, etc.), temáticas abordadas y formas de organización en las que produjeron. Se catalogan y comentan documentales en los que las mujeres tuvieron un rol individual o colectivo, con el fin de promover el conocimiento sobre la vida y obra de las documentalistas.
 
-Make sure to install dependencies:
+
+## Acerca del código
+
+Desarrollado en Node.js con [Nuxt](https://nuxt.com/) (v4).
+
+### Requisitos para ambiente de desarrollo local
+
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (base de datos)
+- [Yarn](https://yarnpkg.com/getting-started/install) (package manager)
+
+### Variables de entorno
+
+Crear archivo `.env` con la configuración necesaria:
 
 ```bash
-# npm
-npm install
+MONGODB_URI=<database-connection-URI>
+MONGODB_DBNAME=<database-name>
+```
 
-# pnpm
-pnpm install
+### Instalar dependencias
 
-# yarn
+```bash
 yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Ambiente de desarrollo
 
-Start the development server on `http://localhost:3000`:
+Iniciar servidor de desarrollo en `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Ambiente de producción
 
-Build the application for production:
+Compilar código para ambniente producción:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
 yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
-
+Vista previa en ambiente local:
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
 yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Contacto
+
+Para conocer más sobre la investigación: [lais@mora.edu.mx](mailto:lais@mora.edu.mx)
+
+Para detalles técnicos sobre el código fuente: [rcolin@mora.edu.mx](mailto:rcolin@mora.edu.mx)
+
+## Licencia
+Este proyecto es software libre, puede ser redistribuido y/o modificado bajo los términos de **GNU General Public License v3.0** siempre y cuando se mantenga la misma licencia.

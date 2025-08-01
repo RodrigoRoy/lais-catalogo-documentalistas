@@ -1,7 +1,7 @@
 import { defineMongooseModel } from '#nuxt/mongoose'
-import { Types } from 'mongoose'
 
-// Definición del modelo para representar un registro de video (unidad documental)
+// Definición del modelo para representar un documental
+
 export const Documental = defineMongooseModel({
     name: 'Documental',
 
@@ -42,8 +42,8 @@ export const Documental = defineMongooseModel({
             descriptorOnomastico: {type: 'string', trim: true},
             descriptorToponimico: {type: 'string', trim: true},
             descriptorTopografico: {type: 'string', trim: true},
-            fuentes: {type: 'string', trim: true},
-            recursos: {type: 'string', trim: true},
+            fuentes: {type: 'string', trim: true}, // TO DO: Definir lista
+            recursos: {type: 'string', trim: true}, // TO DO: Definir lista
         },
         condicionesAccesoUso: {
             idiomaOriginal: {type: 'string', trim: true},
@@ -70,13 +70,13 @@ export const Documental = defineMongooseModel({
     
     // Opciones adicionales del modelo
     options: {
-        // Habilita propiedades 'createdAt' (fecha de creación) y 'updatedAt' (fecha de última modificación)
+        // Habilita propiedades 'createdAt' y 'updatedAt'
         timestamps: true,
         // Nombre en la base de datos (por convención se pluraliza)
         collection: 'documentales',
     },
 
-    // Schema Hooks Function to customize Model
+    // Schema Hooks para personalización del modelo
     hooks(schema){
         // Creación de índices para búsqueda textual
         schema.index( {'$**': 'text'}, {
