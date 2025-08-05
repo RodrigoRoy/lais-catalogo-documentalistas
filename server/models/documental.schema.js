@@ -1,4 +1,5 @@
 import { defineMongooseModel } from '#nuxt/mongoose'
+import { Types } from 'mongoose'
 
 // Definición del modelo para representar un documental
 
@@ -10,7 +11,7 @@ export const Documental = defineMongooseModel({
             codigoReferencia: {type: 'string', required: true, trim: true }, // 1 palabra (ej. MXIM-AV-21-1-7)
             referenciaProcedencia: {type: 'string', trim: true}, // nombre propio
             titulo: {type: 'string', trim: true}, // nombre propio
-            fecha: {type: 'string', trim: true},
+            fecha: {type: 'string', trim: true}, // año, periodo o año aproximado (ej.: 1975, 1977-1978, ca. 1981, c. 1982)
             tituloSerie: {type: 'string', trim: true}, // nombre propio
             numeroPrograma: {type: 'string', trim: true}, // nombre propio
             pais: {type: 'string', trim: true}, // nombre propio
@@ -42,14 +43,14 @@ export const Documental = defineMongooseModel({
             descriptorOnomastico: {type: 'string', trim: true}, // lista de nombres propios
             descriptorToponimico: {type: 'string', trim: true}, // lista de fechas
             descriptorTopografico: {type: 'string', trim: true},  // lista de lugares
-            fuentes: {type: 'string', trim: true}, // TO DO: Definir lista
-            recursos: {type: 'string', trim: true}, // TO DO: Definir lista
+            fuentes: [{type: 'string', enum: ['Entrevistas', 'Grabación de campo', 'Ficción', 'Documentales', 'Registros fílmicos', 'Fotografías', 'Pinturas', 'Grabados', 'Hemerografía', 'Cartografía', 'Testimonios orales', 'Testimonios videorales', 'Noticieros fílmicos', 'Programas de tv', 'Publicidad', 'Videoclips', 'Dibujos', 'Música de época', 'Documentos textuales', 'Registros fonográficos', 'Registros videográficos']}],
+            recursos: [{type: 'string', enum: ['Puesta en escena', 'Animación', 'Sonidos incidentales', 'Narración de voz en off', 'Conducción', 'Intertítulos', 'Musicalización', 'Gráficos']}],
         },
         condicionesAccesoUso: {
             idiomaOriginal: {type: 'string', trim: true}, // default: Español
             subtitulaje: {type: 'string', trim: true},
             color: {type: 'string', enum: ['Color', 'Blanco y negro']},
-            soporteOriginal: {type: 'string', enum: ['Betacam', 'Hi8', 'DVCAM', 'MiniDV', 'VHS']},
+            soporteOriginal: {type: 'string', enum: ['35 mm', '16 mm', 'Super 8', 'U-matic', 'Betacam', 'Betamax', 'VHS', 'Hi8', 'DVCAM', 'MiniDV']},
         },
         documentacionAsociada: {
             originales: {type: 'string', trim: true}, // extensión aproximada de 1 párrafo
@@ -65,6 +66,10 @@ export const Documental = defineMongooseModel({
         adicional: {
             imagen: {type: 'string', trim: true}, // referencia a la portada (ej.: "documental_1.jpg")
             clipVideo: {type: 'string', trim: true}, // referencia al clip de video (ej.: "documental_1.mp4")
+            mujeres: [{
+                documentalista: {type: Types.ObjectId, ref: 'Documentalista'}, // referencia al documental donde participó
+                mencionResponsabilidad: {type: 'string', trim: true}, // cargo que desempeñó en el documental (ej.: dirección, cámara, animación, sonido, etc.)
+            }],
         },
     },
     
