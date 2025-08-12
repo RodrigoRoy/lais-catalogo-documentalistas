@@ -20,6 +20,7 @@ export const Documental = defineMongooseModel({
             investigacion: {type: 'string', trim: true}, // nombres de personas
             ideaOriginal: {type: 'string', trim: true}, // nombres de personas
             guion: {type: 'string', trim: true}, // nombres de personas
+            edicion: {type: 'string', trim: true}, // nombres de personas
             camara: {type: 'string', trim: true}, // nombres de personas
             sonido: {type: 'string', trim: true}, // nombres de personas
             fotografia: {type: 'string', trim: true}, // nombres de personas
@@ -42,7 +43,7 @@ export const Documental = defineMongooseModel({
             sinopsis: {type: 'string', trim: true}, // 1 o más párrafos
             descriptorOnomastico: {type: 'string', trim: true}, // lista de nombres propios
             descriptorToponimico: {type: 'string', trim: true}, // lista de fechas
-            descriptorTopografico: {type: 'string', trim: true},  // lista de lugares
+            descriptorCronologico: {type: 'string', trim: true},  // lista de lugares
             fuentes: [{type: 'string', enum: ['Entrevistas', 'Grabación de campo', 'Ficción', 'Documentales', 'Registros fílmicos', 'Fotografías', 'Pinturas', 'Grabados', 'Hemerografía', 'Cartografía', 'Testimonios orales', 'Testimonios videorales', 'Noticieros fílmicos', 'Programas de tv', 'Publicidad', 'Videoclips', 'Dibujos', 'Música de época', 'Documentos textuales', 'Registros fonográficos', 'Registros videográficos']}],
             recursos: [{type: 'string', enum: ['Puesta en escena', 'Animación', 'Sonidos incidentales', 'Narración de voz en off', 'Conducción', 'Intertítulos', 'Musicalización', 'Gráficos']}],
         },

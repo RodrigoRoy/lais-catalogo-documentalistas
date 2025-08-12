@@ -16,6 +16,7 @@ export const Documentalista = defineMongooseModel({
         documentales: [{type: Types.ObjectId, ref: 'Documental'}], // referencia a documentales donde participó
         colectivos: {type: 'string', trim: true}, // lista de nombres propios
         imagen: {type: 'string', trim: true}, // referencia a retrato (ej.: "documentalista_1.jpg")
+        clipVideo: {type: 'string', trim: true}, // referencia a video de presentación (ej.: "documentalista_1.mp4")
         galeria: [{
             imagen: {type: 'string', trim: true}, // referencia a fotografía (ej.: "acervo_1.jpg")
             descripcion: {type: 'string', trim: true}, // breve pie de página (1-2 líneas de texto)
