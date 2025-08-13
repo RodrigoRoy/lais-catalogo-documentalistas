@@ -15,6 +15,7 @@
     "@nuxt/ui": "3.2.0",
     "nuxt": "^4.0.0",
     "nuxt-mongoose": "1.0.6",
+    "swiper": "^11.2.10",
     "typescript": "^5.6.3",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
