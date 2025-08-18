@@ -6987,7 +6987,6 @@ __metadata:
     moment: "npm:^2.30.1"
     nuxt: "npm:^4.0.0"
     nuxt-mongoose: "npm:1.0.6"
-    swiper: "npm:^11.2.10"
     typescript: "npm:^5.6.3"
     vue: "npm:^3.5.17"
     vue-router: "npm:^4.5.1"
@@ -10261,13 +10260,6 @@ __metadata:
   bin:
     svgo: ./bin/svgo.js
   checksum: 10c0/2b01c910d59d10bb15e17714181a8fa96531b09a4e2cf2ca1abe24dbcb8400725b6d542d6e456c62222546e334d5b344799c170c5b6be0c48e31b02c23297275
-  languageName: node
-  linkType: hard
-
-"swiper@npm:^11.2.10":
-  version: 11.2.10
-  resolution: "swiper@npm:11.2.10"
-  checksum: 10c0/b7e3a7c79d92ccc62af77744edc376c9aefc771a0abd50c4adf07b5e3450b5da9ca7f84f5809e275ff65e1bc9d4500d930628e84a76fc7f2db403291c69b7fac
   languageName: node
   linkType: hard
 
