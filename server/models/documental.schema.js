@@ -43,8 +43,8 @@ export const Documental = defineMongooseModel({
             descriptorOnomastico: {type: 'string', trim: true}, // lista de nombres propios
             descriptorToponimico: {type: 'string', trim: true}, // lista de fechas
             descriptorCronologico: {type: 'string', trim: true},  // lista de lugares
-            // fuentes: [{type: 'string', enum: ['Entrevistas', 'Grabación de campo', 'Ficción', 'Documentales', 'Registros fílmicos', 'Fotografías', 'Pinturas', 'Grabados', 'Hemerografía', 'Cartografía', 'Testimonios orales', 'Testimonios videorales', 'Noticieros fílmicos', 'Programas de tv', 'Publicidad', 'Videoclips', 'Dibujos', 'Música de época', 'Documentos textuales', 'Registros fonográficos', 'Registros videográficos']}],
-            // recursos: [{type: 'string', enum: ['Puesta en escena', 'Animación', 'Sonidos incidentales', 'Narración de voz en off', 'Conducción', 'Intertítulos', 'Musicalización', 'Gráficos']}],
+            fuentes: {type: 'string'}, // ['Entrevistas', 'Grabación de campo', 'Ficción', 'Documentales', 'Registros fílmicos', 'Fotografías', 'Pinturas', 'Grabados', 'Hemerografía', 'Cartografía', 'Testimonios orales', 'Testimonios videorales', 'Noticieros fílmicos', 'Programas de tv', 'Publicidad', 'Videoclips', 'Dibujos', 'Música de época', 'Documentos textuales', 'Registros fonográficos', 'Registros videográficos']
+            recursos: {type: 'string'}, // ['Puesta en escena', 'Animación', 'Sonidos incidentales', 'Narración de voz en off', 'Conducción', 'Intertítulos', 'Musicalización', 'Gráficos']
         },
         condicionesAccesoUso: {
             idiomaOriginal: {type: 'string', trim: true}, // default: Español
