@@ -1,7 +1,5 @@
 <template>
     <AppTitle title="Linea del tiempo" subtitle="Página con los documentales y eventos más relevantes" />
-
-    <AppTimeLine />
     <Timeline :data="documentalistas" class="mt-8" />
 </template>
 
