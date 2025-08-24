@@ -49,7 +49,7 @@ const items = ref([
   {
     label: 'Filmografía',
     icon: 'i-bx-camera-movie',
-    to: '/catalogo'
+    to: '/documentales/filmografia'
   },
   {
     label: 'Línea de tiempo',
