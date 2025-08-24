@@ -1,12 +1,17 @@
 <template>
-  <UNavigationMenu :items="items" class="w-full justify-center" />
+  <UNavigationMenu :items="items" color="primary" :highlight="false" highlight-color="primary" variant="link" content-orientation="vertical" class="justify-center h-16 bg-primary/10" />
 </template>
 
 <script setup>
 const items = ref([
   {
-    label: 'Mujeres documentalistas',
-    icon: 'i-lucide-book-open',
+    label: 'Inicio',
+    icon: 'material-symbols-home-outline',
+    to: '/'
+  },
+  {
+    label: 'Documentalistas',
+    icon: 'i-ri-women-line',
     to: '/documentalistas',
     children: [
       {
@@ -42,46 +47,19 @@ const items = ref([
     ]
   },
   {
-    label: 'Navegación',
-    icon: 'i-lucide-database',
-    children: [
-      {
-        label: 'Documentalistas',
-        icon: 'i-lucide-file-text',
-        description: 'Mujeres documentalistas en México.',
-        to: '/documentalistas'
-      },
-      {
-        label: 'Catálogo',
-        icon: 'i-lucide-file-text',
-        description: 'Documentales con la participación de documentalistas.',
-        to: '/documentales/catalogo'
-      },
-      {
-        label: 'Línea de tiempo',
-        icon: 'i-lucide-file-text',
-        description: 'Documentales y eventos más importantes.',
-        to: '/linea-de-tiempo'
-      },
-      {
-        label: 'Acerca del proyecto',
-        icon: 'i-lucide-file-text',
-        description: 'Información sobre el proyecto Mujeres Documentalistas.',
-        to: '/acerca-de'
-      }
-    ]
+    label: 'Filmografía',
+    icon: 'i-bx-camera-movie',
+    to: '/catalogo'
   },
   {
-    label: 'GitHub',
-    icon: 'i-simple-icons-github',
-    badge: '3.8k',
-    to: 'https://github.com/nuxt/ui',
-    target: '_blank'
+    label: 'Línea de tiempo',
+    icon: 'i-material-symbols-nest-clock-farsight-analog-outline',
+    to: '/linea-de-tiempo',
   },
   {
-    label: 'Help',
-    icon: 'i-lucide-circle-help',
-    disabled: true
+    label: 'Acerca de',
+    icon: 'mdi-information-variant-circle-outline',
+    to: '/acerca-de'
   }
 ])
 </script>
