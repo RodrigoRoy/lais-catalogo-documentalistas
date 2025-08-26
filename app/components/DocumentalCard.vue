@@ -14,7 +14,7 @@
             </p>
         </div>
 
-        <div class="sinopsis text-xs font-light text-neutral mb-1 absolute top-0 w-full bg-black opacity-0 group-hover:opacity-85 transition duration-300 ease-in-out rounded-lg z-10">
+        <div class="sinopsis text-xs font-light text-neutral mb-1 absolute top-0 w-full bg-white dark:bg-black opacity-0 group-hover:opacity-86 transition duration-300 ease-in-out rounded-lg z-10 h-full">
             <div class="flex justify-between">
                 <div>
                      <p class="text-base font-semibold text-neutral mx-2 my-1">
@@ -29,8 +29,8 @@
             <p class="text-sm font-bold text-neutral mx-2 my-2">
                 Sinopsis
             </p>
-            <p class="text-xs font-light text-neutral mx-2 -mt-2 mb-1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer interdum, justo vel condimentum tincidunt, arcu tortor dictum lacus, eu ultricies ex dui et lorem. Nulla iaculis, mauris at porta auctor, lacus dui ullamcorper tortor, eget ornare lacus augue a massa. Nulla tempor sit amet nisl auctor accumsan. Nulla efficitur ultrices leo nec cursus. Duis dignissim, urna in porttitor convallis, risus sapien accumsan nibh, ac porta sem neque nec nisl. Fusce commodo dolor non neque porta consequat.
+            <p class="text-xs font-light text-neutral mx-2 -mt-2 mb-1 color-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer interdum, justo vel condimentum tincidunt, arcu tortor dictum lacus, eu ultricies ex dui et lorem. Nulla iaculis, mauris at porta auctor, lacus dui ullamcorper tortor, eget ornare lacus augue a massa. Nulla tempor sit amet nisl auctor accumsan. Nulla efficitur ultrices leo nec cursus.
             </p>
         </div>
     </div>
