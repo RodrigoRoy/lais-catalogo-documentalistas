@@ -27,6 +27,7 @@ export const Documental = defineMongooseModel({
             musicaOriginal: {type: 'string', trim: true}, // nombres de personas
             musicalizacion: {type: 'string', trim: true}, // nombres de personas
             direccionActuacion: {type: 'string', trim: true}, // nombres de personas
+            actuacion: {type: 'string', trim: true}, // nombres de personas
             direccion: {type: 'string', trim: true}, // nombres de personas
             voces: {type: 'string', trim: true}, // nombres de personas
             otrosColaboracion: {type: 'string', trim: true}, // nombres de personas
@@ -62,6 +63,7 @@ export const Documental = defineMongooseModel({
         },
         controlDescripcion: {
             nombreCatalogacion: {type: 'string', trim: true}, // nombre propio de una persona
+            fechaDescripcion: {type: 'string', trim: true}, // fecha textual (ej.: 3 de febrero de 2024, Abril de 2024, 06/11/24) NOTA: tratar de usar Date datatype
         },
         adicional: {
             imagen: {type: 'string', trim: true}, // referencia a la portada (ej.: "documental_1.jpg")
@@ -70,6 +72,14 @@ export const Documental = defineMongooseModel({
                 documentalista: {type: Types.ObjectId, ref: 'Documentalista'}, // referencia al documental donde participó
                 mencionResponsabilidad: {type: 'string', trim: true}, // cargo que desempeñó en el documental (ej.: dirección, cámara, animación, sonido, etc.)
             }],
+            url: {type: 'string', trim: true}, // identificador URL (ej.: mujer-asi-es-la-vida, ayautla, vida-de-angel, etc.)
+            externalUrl: {type: 'string', trim: true}, // link externo (ej.: https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+            comentario: { // reseña del documental
+                texto: {type: 'string', trim: true}, // párrafos de comentario/reseña
+                autoria: {type: 'string', trim: true}, // autor/a
+                fecha: {type: 'string', trim: true}, // fecha textual (ej.: 3 de febrero de 2024, Abril de 2024, 06/11/24) NOTA: tratar de usar Date datatype
+                semblanza: {type: 'string', trim: true}, // breve semblanza de autor/a (no mayor a 400 caracteres aprox.)
+            },
         },
     },
     
