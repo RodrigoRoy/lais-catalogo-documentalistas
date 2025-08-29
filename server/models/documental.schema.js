@@ -54,7 +54,6 @@ export const Documental = defineMongooseModel({
             soporteOriginal: {type: 'string', enum: ['35 mm', '16 mm', 'Super 8', 'U-matic', 'Betacam', 'Betamax', 'VHS', 'Hi8', 'DVCAM', 'MiniDV']},
         },
         documentacionAsociada: {
-            originales: {type: 'string', trim: true}, // extensión aproximada de 1 párrafo
             unidadesRelacionadas: {type: 'string', trim: true}, // extensión aproximada de 1 párrafo
             notasPublicacion: {type: 'string', trim: true}, // extensión aproximada de 1 párrafo
         },
@@ -72,6 +71,7 @@ export const Documental = defineMongooseModel({
                 documentalista: {type: Types.ObjectId, ref: 'Documentalista'}, // referencia al documental donde participó
                 mencionResponsabilidad: {type: 'string', trim: true}, // cargo que desempeñó en el documental (ej.: dirección, cámara, animación, sonido, etc.)
             }],
+            etiquetas: {type: ['string'], trim: true}, // lista de 3 etiquetas/tags
             url: {type: 'string', trim: true}, // identificador URL (ej.: mujer-asi-es-la-vida, ayautla, vida-de-angel, etc.)
             externalUrl: {type: 'string', trim: true}, // link externo (ej.: https://www.youtube.com/watch?v=dQw4w9WgXcQ)
             comentario: { // reseña del documental
