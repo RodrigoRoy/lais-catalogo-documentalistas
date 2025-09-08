@@ -11,7 +11,6 @@
             const documentales = await fetch("/api/documental").then((res) => res.json());
             let nameDocs = documentales.map(doc => doc.identificacion.titulo);
             // nameDocs = nameDocs.map(doc => doc.toLowerCase().split(" ").join(""));
-            console.log(nameDocs);
 
             const words = nameDocs.flatMap((doc) => doc.toLowerCase().split(" "));
 
