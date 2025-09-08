@@ -48,7 +48,9 @@
             Nube de palabras
         </p>
 
-        <Placeholder :height="650" />
+        <!-- <Placeholder :height="650" /> -->
+
+        <CloudWords />
     </div>
 </template>
 
@@ -76,3 +78,4 @@ const cifras = {
     ],
 }
 </script>
+words
