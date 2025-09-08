@@ -38,6 +38,7 @@
                 .attr("font-family", fontFamily) // Fuente del texto
                 .attr("text-anchor", "middle") // Alinear el texto
                 .attr("fill", "white") // Cambiar color de las palabras
+                .attr("cursor", "pointer") // Se agrega cursor
                 .on("click", (d) => console.log("Redireccion: ", d.srcElement.innerHTML)) // Agregar funcion de click
                 .on("mouseover", (d) => console.log("Hover: ", d)) // Agregar funcion de hover
 
