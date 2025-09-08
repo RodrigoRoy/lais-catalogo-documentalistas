@@ -7,16 +7,13 @@
     import cloud from 'd3-cloud';
 
     export default {
-        mounted() {
-            const words = [
-                'Documental',
-                "Mujeres",
-                "Cine",
-                "LAIS",
-                "Cineteca",
-                "Documentalistas",
-                "Documentales",
-            ];
+        async mounted() {
+            const documentales = await fetch("/api/documental").then((res) => res.json());
+            let nameDocs = documentales.map(doc => doc.identificacion.titulo);
+            // nameDocs = nameDocs.map(doc => doc.toLowerCase().split(" ").join(""));
+            console.log(nameDocs);
+
+            const words = nameDocs.flatMap((doc) => doc.toLowerCase().split(" "));
 
             const fontFamily = "sans-serif";
             const fontScale = 25;
@@ -42,7 +39,8 @@
                 .attr("font-family", fontFamily) // Fuente del texto
                 .attr("text-anchor", "middle") // Alinear el texto
                 .attr("fill", "white") // Cambiar color de las palabras
-                .on("click", (d) => console.log("Redireccion: ", d.srcElement.innerHTML)); // Agregar funcion de click
+                .on("click", (d) => console.log("Redireccion: ", d.srcElement.innerHTML)) // Agregar funcion de click
+                .on("mouseover", (d) => console.log("Hover: ", d)) // Agregar funcion de hover
 
             const w_cloud = cloud()
             .size([width, height])
