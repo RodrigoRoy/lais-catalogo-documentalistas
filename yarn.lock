@@ -1092,7 +1092,7 @@
     which "^5.0.0"
     ws "^8.18.3"
 
-"@nuxt/fonts@^0.11.4":
+"@nuxt/fonts@0.11.4", "@nuxt/fonts@^0.11.4":
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/@nuxt/fonts/-/fonts-0.11.4.tgz#21c0ef65cc841a33610cd2abe16e6f551c013d37"
   integrity sha512-GbLavsC+9FejVwY+KU4/wonJsKhcwOZx/eo4EuV57C4osnF/AtEmev8xqI0DNlebMEhEGZbu1MGwDDDYbeR7Bw==

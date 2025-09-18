@@ -76,3 +76,10 @@ const cifras = {
     ],
 }
 </script>
+
+<style scoped>
+/* Fuente tipográfica (Google Fonts con Nuxt Fonts) */
+div{
+    font-family: "Be Vietnam Pro", Roboto, sans-serif;
+}
+</style>
