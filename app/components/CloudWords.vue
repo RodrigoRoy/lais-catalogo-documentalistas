@@ -58,7 +58,7 @@
             .padding(padding)
             .rotate(rotate)
             .font(fontFamily)
-            .fontSize((d) => Math.sqrt(d.value) * fontScale)
+            .fontSize((d) => Math.random(10, 10) * fontScale)
             .on("word", ({ size, x, y, rotate, text }) => {
             svg
                 .append("text")
