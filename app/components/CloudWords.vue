@@ -8,18 +8,25 @@
 
     export default {
         async mounted() {
-            const documentales = await fetch("/api/documental").then((res) => res.json());
-            let nameDocs = documentales.map(doc => doc.identificacion.titulo);
-            // nameDocs = nameDocs.map(doc => doc.toLowerCase().split(" ").join(""));
-
-            const words = nameDocs.flatMap((doc) => doc.toLowerCase().split(" "));
+            let words = [
+                "Noticias",
+                "Editar",
+                "Festival",
+                "Película",
+                "Cine",
+                "Documental",
+                "Mujeres",
+                "Cineteca",
+                "Mujer",
+                "Historia"
+            ];
 
             const fontFamily = "sans-serif";
-            const fontScale = 25;
-            const padding = 0;
+            const fontScale = 40;
+            const padding = 3;
             const height = 500;
             const width = 700;
-            const rotate = () => 0; // () => (~~(Math.random() * 6) - 3) * 30
+            const rotate = d => Math.random() > 0.5 ? Math.random() * 0 : 90;
 
             var data = d3.rollups(
                 words,
@@ -30,6 +37,10 @@
             .slice(0, 250)
             .map(([text, value]) => ({ text, value }));
 
+            const colorScale = d3.scaleOrdinal()
+            .domain([0, 1])
+            .range(['white', 'black']);
+
             const svg = d3
                 .select(this.$refs.chartContainer)
                 .append("svg")
@@ -37,7 +48,6 @@
                 .attr("width", width) // Ancho del texto
                 .attr("font-family", fontFamily) // Fuente del texto
                 .attr("text-anchor", "middle") // Alinear el texto
-                .attr("fill", "white") // Cambiar color de las palabras
                 .attr("cursor", "pointer") // Se agrega cursor
                 .on("click", (d) => console.log("Redireccion: ", d.srcElement.innerHTML)) // Agregar funcion de click
                 .on("mouseover", (d) => console.log("Hover: ", d)) // Agregar funcion de hover
@@ -54,7 +64,8 @@
                 .append("text")
                 .attr("font-size", size) // Tamaño de la palabra
                 .attr("transform", `translate(${x},${y}) rotate(${rotate})`) // Posicion de la palabra
-                .text(text); // Texto
+                .text(text) // Texto
+                .attr("fill", d => colorScale(Math.random())) // Cambiar color de las palabras
             })
             w_cloud.start();
         }
