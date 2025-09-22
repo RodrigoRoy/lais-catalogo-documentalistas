@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-evenly bg-primary/20 h-16">
-    <img src="/Mujeres_documentalistas_logo.png">
+    <NuxtImg src="/Mujeres_documentalistas_logo.png" />
     <UNavigationMenu :items="items" color="primary" :highlight="false" highlight-color="primary" variant="link" content-orientation="vertical" />
     <UInput color="primary" variant="subtle" icon="i-lucide-search" size="md" placeholder="Buscar..." />
     <ColorModeButton />
@@ -24,31 +24,6 @@ const items = ref([
         icon: 'i-lucide-smile',
         to: '/lupita-sanchez'
       },
-      // {
-      //   label: 'Rosa Martha Fernández',
-      //   icon: 'i-lucide-smile',
-      //   to: '/rosa-martha'
-      // },
-      // {
-      //   label: 'Alejandra Islas',
-      //   icon: 'i-lucide-smile',
-      //   to: '/alejandra-islas'
-      // },
-      // {
-      //   label: 'Bertha Navarro',
-      //   icon: 'i-lucide-smile',
-      //   to: '/bertha-navarro'
-      // },
-      // {
-      //   label: 'Maru Tamés',
-      //   icon: 'i-lucide-smile',
-      //   to: '/maru-tames'
-      // },
-      // {
-      //   label: 'Olivia Carrión',
-      //   icon: 'i-lucide-smile',
-      //   to: '/olivia-carrion'
-      // },
     ]
   },
   {
