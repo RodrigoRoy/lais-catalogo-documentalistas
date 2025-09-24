@@ -16,8 +16,24 @@
             </div>
         </div>
     </div>
-
+    
     <UContainer>
+        <!-- Galería de fotos (de archivo y producción) -->
+        <!-- El diseño se inspira de las fotos tipo Polaroid -->
+        <div class="my-8">
+            <p class="text-center text-2xl text-primary mb-4 uppercase">
+                Galería
+            </p>
+            <div class="columns-1 sm:columns-2 md:columns-4 space-y-4">
+                <UCard v-for="foto in data.galeria" variant="subtle" class="bg-white text-black rounded-none shadow-lg/40 dark:shadow-primary-50 dark:shadow-lg/30">
+                    <NuxtImg :src="foto.imagen" :alt="foto.descripcion" class="object-cover w-full max-h-40" />
+                    <div class="text-xs text-justify p-2">
+                        {{ foto.descripcion }}
+                    </div>
+                </UCard>
+            </div>
+        </div>
+
         <!-- Documentalistas que participaron en el documental -->
         <div class="text-center">
             <p class="text-2xl text-primary mb-4 uppercase">
@@ -29,25 +45,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Galería de fotos (de archivo y producción) -->
-        <div class="mt-8">
-            <p class="text-center text-2xl text-primary mb-4 uppercase">
-                Galería
-            </p>
-            <!-- Fotos estilo Masonry, similar a resultados de imagenes de Google -->
-            <!-- Nota: Se requiere que el pie de fotografía sea parte de la imagen para evitar que se corte en la siguiente columna -->
-            <div class="columns-1 sm:columns-2 md:columns-4 space-y-4">
-                <div v-for="foto in data.galeria" class="relative w-full rounded-xl">
-                    <img :src="foto.imagen" :alt="foto.descripcion" class="object-cover">
-                    <div class="absolute bottom-0 bg-gradient-to-t from-stone-950/90 to-stone-900/10 text-stone-200 text-xs font-light text-justify p-2">
-                        {{ foto.descripcion }}
-                    </div>
-                </div>
-            </div>
-        </div>
     </UContainer>
-
 </template>
 
 <script setup>
