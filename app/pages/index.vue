@@ -48,7 +48,7 @@
             Nube de palabras
         </p>
 
-        <Placeholder :height="650" />
+        <CloudWords />
     </div>
 </template>
 
