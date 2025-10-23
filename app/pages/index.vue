@@ -13,12 +13,23 @@
     </div>
 
     <!-- Presentación de las documentalistas del catálogo -->
-    <div class="text-center bg-neutral-400/15 h-dvh">
+    <div class="text-center bg-neutral-400/15 pb-12 my-12">
         <p class="text-2xl font-bold text-primary-400 uppercase py-12">
             Documentalistas
         </p>
 
-        <Placeholder :height="650" />
+        <!-- Mosaico con los retratos y nombres de la documentalistas principales -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
+            <div v-for="documentalista in documentalistas">
+                <div class="relative bg-red-900 hover:border-2 hover:border-secondary-500">
+                    <NuxtImg :src="`/documentalistas/${documentalista.url}/${documentalista.url}-0.jpg`" class="object-cover w-full max-h-50"></NuxtImg>
+                    <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-base font-medium text-center p-1">
+                        {{ documentalista.nombre }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Números y cifras del proyecto -->
@@ -57,6 +68,9 @@ definePageMeta({
     layout: 'fluid', // ancho total sin margenes
     title: 'Catálogo Mujeres Documentalistas en México (1970-1985)'
 })
+
+// Documentalistas principales, petición en base de datos
+const {data:documentalistas} = await useFetch('/api/documentalistas', {method: 'get', query: {sortBy: 'nombre', principales: 'true'}})
 
 // Números y crifras del proyecto
 const cifras = {

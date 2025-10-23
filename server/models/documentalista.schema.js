@@ -22,6 +22,7 @@ export const Documentalista = defineMongooseModel({
             imagen: {type: 'string', trim: true}, // referencia a fotografía (ej.: "acervo_1.jpg")
             descripcion: {type: 'string', trim: true}, // breve pie de página (1-2 líneas de texto)
         }],
+        principal: {type: 'boolean', default: false}, // indica si se tiene suficiente información de ella
     },
     
     // Opciones adicionales del modelo
