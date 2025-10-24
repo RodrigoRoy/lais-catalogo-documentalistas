@@ -1,2 +1,31 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+/* Definición de colores personalizados a partir del diseño. Se establece su uso en /app/ap.config.js */
+@theme static {
+    /* Color principal azul */
+    --color-retro-blue-50: #e6f1fa;
+    --color-retro-blue-100: #c1ddf3;
+    --color-retro-blue-200: #9dc8eb;
+    --color-retro-blue-300: #7db2e1;
+    --color-retro-blue-400: #69a2db;
+    --color-retro-blue-500: #5a93d5;
+    --color-retro-blue-600: #5286c8;
+    --color-retro-blue-700: #4974b5;
+    --color-retro-blue-800: #4164a3;
+    --color-retro-blue-900: #344782;
+    --color-retro-blue-950: #344782;
+
+    /* Color secundario rojo */
+    --color-retro-red-50: #ffebee;
+    --color-retro-red-100: #ffccd1;
+    --color-retro-red-200: #f59897;
+    --color-retro-red-300: #ec6f6e;
+    --color-retro-red-400: #f74c49;
+    --color-retro-red-500: #fb392b;
+    --color-retro-red-600: #ed2e2b;
+    --color-retro-red-700: #db2226;
+    --color-retro-red-800: #ce181e;
+    --color-retro-red-900: #c0000f;
+    --color-retro-red-950: #c0000f;
+}

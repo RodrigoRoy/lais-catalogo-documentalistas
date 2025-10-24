@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-evenly bg-primary/20 h-16">
+  <div class="flex justify-evenly bg-primary-700/20 h-16">
     <NuxtImg src="/Mujeres_documentalistas_logo.png" />
     <UNavigationMenu :items="items" color="primary" :highlight="false" highlight-color="primary" variant="link" content-orientation="vertical" />
     <UInput color="primary" variant="subtle" icon="i-lucide-search" size="md" placeholder="Buscar..." />
