@@ -1,18 +1,20 @@
 <template>
     <!-- Presentación inicial de la documentalista -->
-    <div class="h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
-        <div>
-            <p class="text-3xl sm:mt-24 text-primary">
-                {{ documentalista.nombre }}
-            </p>
-            <p v-if="documentalista.colectivos" class="font-light">
-                Participó en: {{ documentalista.colectivos }}
-            </p>
-            <p class="my-6">
-                {{ documentalista.semblanza }}
-            </p>
-            <div>
-                <UButton v-if="documentalista.clipVideo" variant="soft" size="md" icon="i-mdi-youtube" :to="documentalista.clipVideo" target="_blank">Seminario Bitácora</UButton>
+    <div :class="`bg-[url(/documentalistas/${route.params.documentalista}/${documentalista.imagen})]`">
+        <div class="bg-linear-to-b from-stone-900/70 via-neutral-900/50 to-stone-900">
+            <div class="h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
+                <p class="text-3xl sm:pt-24 text-primary">
+                    {{ documentalista.nombre }}
+                </p>
+                <p v-if="documentalista.colectivos" class="font-light">
+                    Participó en: {{ documentalista.colectivos }}
+                </p>
+                <p class="my-6">
+                    {{ documentalista.semblanza }}
+                </p>
+                <div>
+                    <UButton v-if="documentalista.clipVideo" variant="soft" size="md" icon="i-mdi-youtube" :to="documentalista.clipVideo" target="_blank">Seminario Bitácora</UButton>
+                </div>
             </div>
         </div>
     </div>
