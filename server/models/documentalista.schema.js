@@ -13,6 +13,7 @@ export const Documentalista = defineMongooseModel({
         fechaNacimiento: {type: 'date'},
         fechaDefuncion: {type: 'date'},
         semblanza: {type: 'string', trim: true}, // máximo de 400 palabras
+        semblanzaHTML: {type: 'string', trim: true}, // misma semblanza con formato HTML
         mencionResponsabilidad: {type: 'string', trim: true}, // actividades que realizó (ej.: "Investigación", "Sonidista y fotografía fija")
         documentales: [{type: Types.ObjectId, ref: 'Documental'}], // referencia a documentales donde participó
         colectivos: {type: 'string', trim: true}, // lista de nombres propios
