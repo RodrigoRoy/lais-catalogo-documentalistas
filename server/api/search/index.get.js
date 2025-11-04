@@ -8,9 +8,10 @@ export default defineEventHandler( async (event) => {
     const searchQuery = query?.q ? query.q : ''
 
     try {
-        // Listas de resultados de la búsqueda
-        const documentales = await Documental.find({$text: {$search: searchQuery}}, {score: {$meta: "textScore"}}).sort({score: { $meta: "textScore" }})
-        const documentalistas = await Documentalista.find({$text: {$search: searchQuery}}, {score: {$meta: "textScore"}}).sort({score: { $meta: "textScore" }})
+        // Listas de resultados de la búsqueda (se envian los datos mínimos necesarios para mostrar resultados)
+        const documentales = await Documental.find({$text: {$search: searchQuery}}, {score: {$meta: "textScore"}}).sort({score: { $meta: "textScore" }}).select({ 'identificacion.titulo': 1, 'identificacion.fecha': 1, 'identificacion.duracion': 1, 'adicional.imagen': 1, 'adicional.url': 1 })
+
+        const documentalistas = await Documentalista.find({$text: {$search: searchQuery}}, {score: {$meta: "textScore"}}).sort({score: { $meta: "textScore" }}).select({ nombre: 1, mencionResponabilidad: 1, url: 1, imagen: 1 })
 
         return { 
             documentales: documentales, 
@@ -18,6 +19,6 @@ export default defineEventHandler( async (event) => {
         }
     }
     catch (error) {
-        throw createError({statusCode: 500, statusMessage: 'Error en BD', message: error})
+        throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})
     }
 })
