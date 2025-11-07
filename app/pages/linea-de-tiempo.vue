@@ -1,5 +1,12 @@
 <template>
-    <AppTitle title="Linea del tiempo" subtitle="Página con los documentales y eventos más relevantes" />
+    <h2 class="text-2xl font-bold text-center uppercase mt-8 mb-2">
+        Linea de tiempo
+    </h2>
+
+    <p class="text-sm font-light text-center uppercase mb-12">
+        Documentales y eventos más relevantes
+    </p>
+
     <p class="text-sm font-normal text-justify">{{ loremIpsum }}</p>
     <Timeline :data="documentalistas" class="mt-8" />
 </template>

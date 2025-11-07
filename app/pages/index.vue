@@ -25,7 +25,7 @@
                     <NuxtLink :to="`/${documentalista.url}`">
                         <NuxtImg :src="`/documentalistas/${documentalista.url}/${documentalista.url}-0.jpg`" class="object-cover w-full max-h-50"></NuxtImg>
                         <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->
-                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-sm font-medium text-center p-1">
+                        <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-sm font-medium text-center p-1">
                             {{ documentalista.nombre }}
                         </div>
                     </NuxtLink>

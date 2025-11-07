@@ -1,5 +1,11 @@
 <template>
-    <AppTitle title="Acerca del sitio" subtitle="Información con la información del proyecto de investigación" />
+    <h2 class="text-2xl font-bold text-center uppercase mt-8 mb-2">
+        Acerca del sitio
+    </h2>
+
+    <p class="text-sm font-light text-center uppercase mb-12">
+        Información con la información del proyecto de investigación
+    </p>
 
     <p class="text-sm font-normal text-justify">{{ loremIpsum }}</p>
 </template>
