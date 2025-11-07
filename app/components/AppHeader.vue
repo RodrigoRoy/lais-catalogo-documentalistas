@@ -52,7 +52,6 @@ const items = ref([
   {
     label: 'Documentalistas',
     icon: 'i-ri-women-line',
-    to: '/documentalistas',
     children: [
       {
         label: 'Alejandra Islas',
