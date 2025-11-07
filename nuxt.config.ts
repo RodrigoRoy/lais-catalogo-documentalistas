@@ -10,6 +10,16 @@ export default defineNuxtConfig({
     '@nuxt/fonts'
   ],
 
+  app: {
+    baseURL: "/mujeresdocumentalistas",
+    head: {
+      title: 'Catálogo Mujeres Documentalistas en México 1970-1985',
+      link: [
+        { rel: 'icon', href: '/favicon.ico' }
+      ]
+    }
+  },
+
   // Part of NuxtUI config: https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css
   css: ['~/assets/css/main.css'],
 
