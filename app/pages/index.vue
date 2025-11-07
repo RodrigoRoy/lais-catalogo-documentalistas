@@ -1,23 +1,27 @@
 <template>
     <!-- Sección de presentación del proyecto -->
-    <div class="text-center h-dvh">
-        <p class="text-3xl font-bold text-primary-700 uppercase py-20">
+    <div class="text-center h-dvh bg-beige ">
+        <p class="text-3xl font-bold text-neutral-950 uppercase py-20">
             Catálogo Mujeres Documentalistas en México <br />(1970-1985)
         </p>
 
-        <p class="text-lg font-light px-12">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+        <p class="text-lg font-light px-12 text-neutral-950">
+            Durante muchos años la historiografía del cine mexicano estuvo marcada por una clara ausencia de las mujeres, pareciera que no existían o que su papel en las producciones se reducía a roles que tradicionalmente el mundo masculino les asignaba. Por lo regular, con pocas excepciones, se hablaba sólo de actrices de larga trayectoria, principalmente de aquellas que participaron en obras de la Época de oro del cine mexicano. Muchos cuestionamientos surgen a partir de esto ¿no había más mujeres en el mundo del cine? ¿cuántas de ellas dirigieron alguna película? ¿qué otras responsabilidades tenían dentro de la industria del cine? ¿La participación de las mujeres se limitaba al cine de ficción? ¿Había mujeres documentalistas?​
         </p>
 
-        <UButton class="mt-24 bg-primary-700">Ver catálogo</UButton>
+        <UButton class="mt-24 uppercase font-light text-secondary-800" variant="link" color="secondary" >Ver catálogo</UButton>
     </div>
 
     <!-- Presentación de las documentalistas del catálogo -->
-    <div class="text-center bg-neutral-400/15 pb-12 my-12">
-        <p class="text-2xl font-bold text-primary-700 uppercase py-12">
-            Documentalistas
-        </p>
-
+    <div class="relative bg-neutral-950 pb-12">
+        <div class="relative py-12 ml-18">
+            <p class="text-left text-2xl font-bold text-collage uppercase">
+                Documentalistas
+            </p>
+            <NuxtImg src="/icons/icon-white-4.png" class="max-w-12" />
+            <NuxtImg src="/icons/icon-white-8.png" class="absolute right-4 top-6 max-w-20" />
+        </div>
+        
         <!-- Mosaico con los retratos y nombres de la documentalistas principales -->
         <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
             <div v-for="documentalista in documentalistas">
@@ -32,10 +36,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="absolute right-16 bottom-4 flex">
+            <NuxtImg src="/icons/icon-red-2.png" class="max-w-12 mr-2" /><NuxtImg src="/icons/icon-red-3.png" class="max-w-12" />
+        </div>
     </div>
 
     <!-- Números y cifras del proyecto -->
-    <div class="text-center h-120">
+    <!-- <div class="text-center h-120">
         <p class="text-2xl font-bold text-primary-700 uppercase py-12">
             Documentalistas en cifras
         </p>
@@ -53,15 +61,19 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Nube de palabras con los temas que abordan los documentales -->
-    <div class="text-center bg-neutral-400/15 h-dvh">
-        <p class="text-2xl font-bold text-primary-700 uppercase py-12">
+    <div class="relative text-center bg-beige ">
+        <p class="text-2xl font-bold text-neutral-950 uppercase py-12 hidden">
             Nube de palabras
         </p>
 
-        <CloudWords />
+        <CloudWords class="py-18" />
+        
+        <div class="absolute right-8 bottom-0 flex">
+            <NuxtImg src="/icons/icon-black-7.png" class="max-w-12" />
+        </div>
     </div>
 </template>
 

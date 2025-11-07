@@ -888,7 +888,7 @@
 
             const colorScale = d3.scaleOrdinal()
             .domain([0, 1])
-            .range(['white', 'black']); // TO DO: Usar colores rojos
+            .range(['#616161', '#212121']); // TO DO: Usar colores rojos
 
             const svg = d3
                 .select(this.$refs.chartContainer)
@@ -907,7 +907,15 @@
             .padding(padding)
             .rotate(rotate)
             .font(fontFamily)
-            .fontSize((d) => Math.random(10, 10) * fontScale) // TO DO: Tamaño según frecuencia/repetición del término
+            .fontSize((d) => {
+                const wordCounts = words.reduce((acc, word) => {
+                    acc.set(word, (acc.get(word) || 0) + 1)
+                    return acc
+                }, new Map())
+                // console.log('wordCounts', wordCounts)
+                // console.log('d', d)
+                return Math.random(10, 10) * fontScale
+            }) // TO DO: Tamaño según frecuencia/repetición del término
             .on("word", ({ size, x, y, rotate, text }) => {
             svg
                 .append("text")
