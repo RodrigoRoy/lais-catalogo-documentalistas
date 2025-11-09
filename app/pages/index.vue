@@ -12,7 +12,7 @@
                 Catálogo Mujeres Documentalistas en México <br />(1970-1985)
             </p>
             <p class="text-lg font-light px-12 text-neutral-950 bg-beige pb-2 pt-4">
-                El Catálogo Mujeres Documentalistas en México (1970-1985) reúne a realizadoras, camarógrafas, sonidistas, editoras, guionistas, fotógrafas, productoras, animadoras, etc., que participaron en el quehacer documental en dicho periodo. A todas ellas les llamamos Mujeres Documentalistas.
+                Reúne a realizadoras, camarógrafas, sonidistas, editoras, guionistas, fotógrafas, productoras, animadoras, etc., que participaron en el quehacer documental en dicho periodo. A todas ellas les llamamos Mujeres Documentalistas.
             </p>
     
             <!-- <UButton class="mt-18 uppercase font-light text-secondary-800 z-30 bg-beige" variant="link" color="secondary" >Ver catálogo</UButton> -->
