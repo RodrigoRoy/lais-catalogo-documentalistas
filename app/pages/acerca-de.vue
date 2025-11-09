@@ -1,16 +1,43 @@
 <template>
-    <div class="bg-primary-700 pb-8">
+    <div class="bg-primary-700 pb-16">
         <UContainer>
-            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-8 pb-4">
+            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
                 Acerca del proyecto
             </h2>
         
-            <p class="font-normal text-justify">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+            <p class="font-normal text-justify mb-4">
+                En México la participación de las mujeres en el cine se incrementó a partir de los años sesenta y se profundizó en la siguiente década a raíz de tres convergencias: la creación de las escuelas de cine, la posibilidad de acceder a formatos de filmación más económicos como el 16 mm y el Super 8, y el uso que hicieron los colectivos políticos del medio cinematográfico como herramienta de lucha. El Colectivo Cine Mujer fue un referente de cine feminista del que en su momento se escribió (para bien y para mal), y que posteriormente ha motivado varios estudios. Además de los trabajos enfocados en las figuras de algunas de las realizadoras. En 2021 un grupo de investigadoras e investigadores de diversas instituciones e independientes, que convergimos en el Seminario Interinstitucional Documental e Investigación, impulsado por el Laboratorio Audiovisual de Investigación Social del Instituto Mora, comenzamos a investigar los documentales hechos por mujeres entre 1970 y 1985. Aunque encontramos diversos estudios del tema, identificamos que existe una escasa representación de las mujeres en la historia del documental, una carencia de filmografías y una dificultad para acceder a las películas.
+            </p>
+            <p class="font-normal text-justify mb-4">
+                En una primera etapa de la investigación nos avocamos a la creación de fuentes de investigación a partir de entrevistas para historias de vida, proceso que incluyó sentarnos a mirar junto con ellas sus fotografías, documentos y películas. Fue en ese proceso que su filmografía comenzó a aflorar; sin embargo, no fue sencillo lograr ver sus películas debido a que en la mayoría de los casos ellas no las resguardaban, y a que en muchas ocasiones no poseían los derechos para poder obtener una copia pese a su autoría. Además, el cambio del soporte del cine al video (en principio analógico y posteriormente digital), disminuyó las posibilidades de acceder a copias para poder hacer investigación. Consideramos que un mecanismo para subsanar la carencia de conocimiento sobre estos trabajos podría ser un catálogo web de acceso abierto, que visibilice tanto a las mujeres documentalistas del periodo como a su obra. Este Catálogo reúne semblanzas, listados de filmografía, galerías fotográficas y fichas técnicas de los documentales (realizados a partir de visionados, para los cuales una parte considerable requirió digitalización), así como comentarios hechos por el equipo de investigación. Aunque no se colocan los documentales a causa de los derechos de autor, se compila información sobre su contenido, dejando ver la manera en la que estas mujeres contribuyeron a mirar y hacer ver la realidad social que les atravesó. Además de las semblanzas de las documentalistas, encontrarán fichas dedicadas a Guadalupe Ferrer y Teresa Carvajal, preservadoras, quienes, sin su amplio conocimiento del periodo y amor por el cine sería imposible acceder a muchas de estas obras. 
             </p>
             <p class="font-normal text-justify">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.\n\nLorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                Es preciso aclarar que de manera excepcional este catálogo alberga obras fuera del periodo: en las que participó Martha Colmenares como parte de la Comisión de relaciones de la Asamblea de Autoridades Zapotecas y Chinantecas de la Sierra, de Teófila Palafox, de Bertha Navarro y de Trinidad Langarica. El primer caso es relevante por tratarse de obras colectivas del primer colectivo de video indígena del país, piezas que a la fecha no cuentan con un respaldo fuera de la comunidad y que conforman un archivo audiovisual que se comienza a ser organizado. El segundo caso por tratarse de la obra de la única tejedora ikoot que siguió produciendo cine luego de Primer taller de cine indígena (INI, 1985). El tercero, debido a que, al tratarse de obras clandestinas, los Comunicados del C.N.H. de 1968, no acreditaron a su editora, Bertha Navarro. Un hallazgo de la investigación, relevante además por tratarse del primer acercamiento de Navarro al documental. Finalmente, en el último caso, porque su trabajo personal como camarógrafa y realizadora se encuentra disperso, aunado a que al tratarse de piezas institucionales carecen de créditos, por lo que consideramos que, de no catalogarse ahora, más tarde su catalogación y digitalización sería más difícil o podría perderse la referencia a su colaboración. Por último, resta señalar que este esfuerzo no hubiera sido posible sin la colaboración de las propias Mujeres Documentalistas quienes nos han compartido su tiempo, sus recuerdos, reflexiones y cariño. Pero tampoco sin los archivos que generosamente nos abrieron las puertas y dieron facilidades para lograr las digitalizaciones y visionados necesarios. El Catálogo es una obra inconclusa gracias a la gran producción en las que participaron las mujeres. Queda pendiente seguir rastreando, digitalizar, catalogar y comentar más obras, que esperamos algún día pueda ser posible acceder a ellas de manera libre y gratuita.  
             </p>
+        </UContainer>
+    </div>
+
+    <div class="bg-neutral-950">
+        <UContainer>
+            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
+                Equipo de investigación
+            </h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-3 pb-16">
+                <div v-for="persona in investigacion" class="relative group">
+                    <NuxtImg :src="`/investigacion/${persona.imagen}`" />
+                    <div class="absolute top-0 bg-linear-to-b from-neutral-950/90 to-transparent p-2 w-full">
+                        <p class="text-sm">
+                            {{ persona.nombre }}
+                        </p>
+                    </div>
+                    <div class="absolute bottom-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 w-full">
+                        <p class="text-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                            {{ persona.semblanza }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </UContainer>
     </div>
 
@@ -122,6 +149,9 @@ definePageMeta({
     layout: 'fluid',
     title: 'Acerca del sitio',
 })
+
+const { data: investigacion } = useFetch('/api/investigacion')
+
 </script>
 
 <style scoped>
