@@ -50,8 +50,8 @@ export const Documental = defineMongooseModel({
         condicionesAccesoUso: {
             idiomaOriginal: {type: 'string', trim: true}, // default: Español
             subtitulaje: {type: 'string', trim: true},
-            color: {type: 'string', enum: ['Color', 'Blanco y negro']},
-            soporteOriginal: {type: 'string', enum: ['35 mm', '16 mm', 'Super 8', 'U-matic', 'Betacam', 'Betamax', 'VHS', 'Hi8', 'DVCAM', 'MiniDV']},
+            color: {type: 'string', trim: true}, // ['Color', 'Blanco y negro']
+            soporteOriginal: {type: 'string', trim: true}, // ['35 mm', '16 mm', 'Super 8', 'U-matic', 'Betacam', 'Betamax', 'VHS', 'Hi8', 'DVCAM', 'MiniDV']
         },
         documentacionAsociada: {
             unidadesRelacionadas: {type: 'string', trim: true}, // extensión aproximada de 1 párrafo

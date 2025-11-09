@@ -1,43 +1,38 @@
 <!-- Representación mínima de un documental, similar a un elemento Card -->
 <template>
-    <div class="pb-2h-61 relative rounded-lg outline-solid outline-1 outline-neutral-500/20 hover:outline-neutral-200 group">
-        <!-- Portada -->
-        <img :src="data.adicional?.imagen || 'https://picsum.photos/seed/picsum/300/200'" class="rounded-t-lg group-hover:w-fit">
-        
-        <!-- Texto básico / mínimo -->
-        <div class="relative bottom-0 left-0 group-hover:opacity-0 transition duration-300 ease-in-out">
-            <p class="text-base font-semibold text-neutral mx-2 my-1">
-                {{ data.identificacion.titulo || '' }}
-            </p>
-            <p class="text-sm font-light text-neutral mx-2 -mt-2 mb-1">
-                {{ data.identificacion.realizacion || '' }}, 
-                {{ data.identificacion.pais || '' }}, 
-                {{ data.identificacion.fecha || '' }}
-            </p>
-        </div>
-
-        <div class="sinopsis text-xs font-light text-neutral mb-1 absolute top-0 w-full bg-white dark:bg-black opacity-0 group-hover:opacity-86 transition duration-300 ease-in-out rounded-lg z-10 h-full">
-            <div class="flex justify-between">
-                <div>
-                     <p class="text-base font-semibold text-neutral mx-2 my-1">
+    <NuxtLink :to="`/documentales/${data.adicional.url}`">
+        <div class="relative group">
+            <!-- Imagen de portada y título (sobre imagen con fondo degradado) -->
+            <div class="relative z-10">
+                <NuxtImg :src="data.adicional?.imagen || 'https://picsum.photos/seed/picsum/300/200'" class="max-h-60" />
+                <div class="absolute bottom-0 left-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 text-neutral-100 w-full">
+                    <p class="uppercase text-sm">
                         {{ data.identificacion.titulo || '' }}
                     </p>
-                    <p class="text-sm font-light text-neutral mx-2 -mt-2 mb-1">
-                        {{ data.identificacion.realizacion || '' }}, 
-                        {{ data.identificacion.pais || '' }}, 
-                        {{ data.identificacion.fecha || '' }}
-                    </p>
                 </div>
-                <UButton class="mx-2 my-2" color="neutral" variant="outline">Detalles</UButton>
             </div>
-            <p class="text-sm font-bold text-neutral mx-2 my-2">
-                Sinopsis
-            </p>
-            <p class="text-xs font-light text-neutral mx-2 -mt-2 mb-1 color-white">
-                {{ data.contenidoEstructura.sinopsis || '' }}
-            </p>
+    
+            <div class="text-xs bg-neutral-950 text-neutral-100 px-2 pb-1 z-10">
+                <p class="line-clamp-1 font-extralight mb-1">
+                    {{ data.identificacion.pais || '' }} {{ data.identificacion.fecha || '' }}
+                </p>
+                <p class="line-clamp-1">
+                    {{ data.identificacion.realizacion || '' }}
+                </p>
+            </div>
+            
+            <!-- Recuadro con más información al pasar el cursor encima -->
+            <div class="absolute bottom-0 translate-y-full text-xs bg-neutral-950 text-neutral-100 w-full px-2 pb-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p v-if="data.identificacion.duracion || data.condicionesAccesoUso.idiomaOriginal" class="mb-2 font-light">
+                    {{ data.identificacion.duracion ? `${data.identificacion.duracion} min.` : '' }}
+                    {{ data.condicionesAccesoUso.idiomaOriginal || '' }}
+                </p>
+                <p class="line-clamp-5">
+                    {{ data.contenidoEstructura.sinopsis || '' }}
+                </p>
+            </div>
         </div>
-    </div>
+    </NuxtLink>
 </template>
 
 <script setup>
@@ -118,3 +113,10 @@ defineProps({
 //     },
 // })
 </script>
+
+<style scoped>
+/* Fuente tipográfica (Google Fonts con Nuxt Fonts) */
+div{
+    font-family: "Be Vietnam Pro", Roboto, sans-serif;
+}
+</style>
