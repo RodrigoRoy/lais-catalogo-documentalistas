@@ -1,15 +1,22 @@
 <template>
     <!-- Sección de presentación del proyecto -->
-    <div class="text-center h-dvh bg-beige ">
-        <p class="text-3xl font-bold text-neutral-950 uppercase py-20">
-            Catálogo Mujeres Documentalistas en México <br />(1970-1985)
-        </p>
+    <div class="relative text-center h-dvh bg-beige ">
+        <div class="z-0">
+            <NuxtImg src="collage1a.png" class="absolute left-0 bottom-0 max-w-1/3" />
+            <NuxtImg src="collage1b.png" class="absolute right-0 bottom-0 max-w-1/2" />
+            <NuxtImg src="collage2b.png" class="absolute right-0 top-0 max-w-1/2" />
+        </div>
 
-        <p class="text-lg font-light px-12 text-neutral-950">
-            Durante muchos años la historiografía del cine mexicano estuvo marcada por una clara ausencia de las mujeres, pareciera que no existían o que su papel en las producciones se reducía a roles que tradicionalmente el mundo masculino les asignaba. Por lo regular, con pocas excepciones, se hablaba sólo de actrices de larga trayectoria, principalmente de aquellas que participaron en obras de la Época de oro del cine mexicano. Muchos cuestionamientos surgen a partir de esto ¿no había más mujeres en el mundo del cine? ¿cuántas de ellas dirigieron alguna película? ¿qué otras responsabilidades tenían dentro de la industria del cine? ¿La participación de las mujeres se limitaba al cine de ficción? ¿Había mujeres documentalistas?​
-        </p>
-
-        <UButton class="mt-24 uppercase font-light text-secondary-800" variant="link" color="secondary" >Ver catálogo</UButton>
+        <div class="absolute w-2/3 top-4 left-1/2 -translate-x-1/2 py-20 z-10">
+            <p class="text-3xl font-bold text-neutral-950 uppercase bg-beige pt-2">
+                Catálogo Mujeres Documentalistas en México <br />(1970-1985)
+            </p>
+            <p class="text-lg font-light px-12 text-neutral-950 bg-beige pb-2 pt-4">
+                El Catálogo Mujeres Documentalistas en México (1970-1985) reúne a realizadoras, camarógrafas, sonidistas, editoras, guionistas, fotógrafas, productoras, animadoras, etc., que participaron en el quehacer documental en dicho periodo. A todas ellas les llamamos Mujeres Documentalistas.
+            </p>
+    
+            <!-- <UButton class="mt-18 uppercase font-light text-secondary-800 z-30 bg-beige" variant="link" color="secondary" >Ver catálogo</UButton> -->
+        </div>
     </div>
 
     <!-- Presentación de las documentalistas del catálogo -->
