@@ -7,12 +7,12 @@
         <!-- Texto básico / mínimo -->
         <div class="relative bottom-0 left-0 group-hover:opacity-0 transition duration-300 ease-in-out">
             <p class="text-base font-semibold text-neutral mx-2 my-1">
-                {{ data.identificacion.titulo }}
+                {{ data.identificacion.titulo || '' }}
             </p>
             <p class="text-sm font-light text-neutral mx-2 -mt-2 mb-1">
-                {{ data.identificacion.realizacion }}, 
-                {{ data.identificacion.pais }}, 
-                {{ data.identificacion.fecha }}
+                {{ data.identificacion.realizacion || '' }}, 
+                {{ data.identificacion.pais || '' }}, 
+                {{ data.identificacion.fecha || '' }}
             </p>
         </div>
 
@@ -20,12 +20,12 @@
             <div class="flex justify-between">
                 <div>
                      <p class="text-base font-semibold text-neutral mx-2 my-1">
-                        {{ data.identificacion.titulo }}
+                        {{ data.identificacion.titulo || '' }}
                     </p>
                     <p class="text-sm font-light text-neutral mx-2 -mt-2 mb-1">
-                        {{ data.identificacion.realizacion }}, 
-                        {{ data.identificacion.pais }}, 
-                        {{ data.identificacion.fecha }}
+                        {{ data.identificacion.realizacion || '' }}, 
+                        {{ data.identificacion.pais || '' }}, 
+                        {{ data.identificacion.fecha || '' }}
                     </p>
                 </div>
                 <UButton class="mx-2 my-2" color="neutral" variant="outline">Detalles</UButton>
@@ -34,7 +34,7 @@
                 Sinopsis
             </p>
             <p class="text-xs font-light text-neutral mx-2 -mt-2 mb-1 color-white">
-                {{ data.contenidoEstructura.sinopsis }}
+                {{ data.contenidoEstructura.sinopsis || '' }}
             </p>
         </div>
     </div>

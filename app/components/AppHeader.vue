@@ -126,14 +126,7 @@ const items = ref([
   {
     label: 'Filmografía',
     icon: 'i-bx-camera-movie',
-    to: '/documentales/filmografia',
-    children: [
-      {
-        label: 'Xantolo',
-        icon: 'i-mdi-movie',
-        to: '/documentales/xantolo-fiesta-de-todos-los-santos'
-      },
-    ]
+    to: '/filmografia',
   },
   {
     label: 'Línea de tiempo',
