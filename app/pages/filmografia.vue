@@ -33,7 +33,7 @@
             <UButton v-if="status === 'pending'" loading loading-icon="i-lucide-loader-circle" size="lg" variant="link" class="text-secondary-800" color="neutral" >Buscando documentales...</UButton>
         
             <!-- Lista de documentales según filtros y ordenamiento -->
-            <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-2">
+            <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-2">
                 <div v-for="documental in documentales">
                     <DocumentalCard :data="documental" />
                 </div>
