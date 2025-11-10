@@ -71,7 +71,7 @@
     </div> -->
 
     <!-- Nube de palabras con los temas que abordan los documentales -->
-    <div class="relative text-center bg-beige ">
+    <!-- <div class="relative text-center bg-beige ">
         <p class="text-2xl font-bold text-neutral-950 uppercase py-12 hidden">
             Nube de palabras
         </p>
@@ -81,7 +81,7 @@
         <div class="absolute right-8 bottom-0 flex">
             <NuxtImg src="/icons/icon-black-7.png" class="max-w-12" />
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script setup>

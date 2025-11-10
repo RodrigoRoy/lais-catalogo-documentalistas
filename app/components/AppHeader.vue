@@ -128,11 +128,11 @@ const items = ref([
     icon: 'i-bx-camera-movie',
     to: '/filmografia',
   },
-  {
-    label: 'Línea de tiempo',
-    icon: 'i-material-symbols-nest-clock-farsight-analog-outline',
-    to: '/linea-de-tiempo',
-  },
+  // {
+  //   label: 'Línea de tiempo',
+  //   icon: 'i-material-symbols-nest-clock-farsight-analog-outline',
+  //   to: '/linea-de-tiempo',
+  // },
   {
     label: 'Acerca de',
     icon: 'mdi-information-variant-circle-outline',
