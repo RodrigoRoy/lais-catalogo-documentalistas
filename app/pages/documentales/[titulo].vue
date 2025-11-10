@@ -1,6 +1,6 @@
 <template>
     <!-- Presentación inicial del documental -->
-    <div class="w-full" :style="{'background-image': `url(/documentales/cosas-de-mujeres.jpg)`}" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
+    <div class="w-full" :style="{'background-image': `url(/documentales/${documental.adicional.imagen})`}" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Título como encabezado -->
@@ -82,7 +82,7 @@
     </div>
     
     <!-- Sección para el comentario -->
-    <div v-if="documental.adicional.comentario?.texto" class="py-12 pl-8 bg-neutral-950 text-neutral-100">
+    <div v-if="documental.adicional.comentario?.texto" class="py-12 pl-8 bg-beige text-neutral-950">
         <UContainer>
             <p class="text-left text-2xl uppercase italic my-8">
                 Comentario
