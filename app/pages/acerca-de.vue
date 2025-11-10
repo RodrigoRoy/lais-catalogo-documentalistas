@@ -2,7 +2,7 @@
     <div class="bg-primary-700 pb-16">
         <UContainer>
             <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
-                Acerca del proyecto
+                Acerca del catálogo
             </h2>
         
             <p class="font-normal text-justify mb-4">
@@ -113,7 +113,7 @@
             <p class="mb-4">
                 <strong>Acervos institucionales</strong>
                 <br />
-                Archivo Paul Leduc: Valentina Leduc
+                <strong>Archivo Paul Leduc</strong>: Valentina Leduc
                 <br />
                 <strong>Centro de Capacitación Cinematográfica</strong>: Dinorath Ramírez González (Directora General), Claudia Prado Valencia (Subdirectora de Investigación y Divulgación), Brenda Ibañez Toledo (Jefa del Departamento de Acervo y Tráfico). 
                 <br />
@@ -140,6 +140,20 @@
                 <strong>Agradecimientos</strong>:
                 Gabriela Sánchez Gutiérrez (Directora del Instituto Mora), Lourdes Roca (coordinadora Laboratorio Audiovisual de Investigación Social del Instituto Mora), personal de Recursos Materiales y Servicios Generales del Instituto Mora, Miguel Ángel Álvarez Aguilera, Federico Chao Puente, Guillermo Díaz Palafox, Angélica González Morón, Leticia Hernández Castillo, Gonzalo Infante, Nute Kuijin, Atania Díaz Herrenschmidt, Yubán Mena, Sergio Moreno, Juan Sebastián Moreno González, Nahum Leonardo Moreno González, Miguel Necoechea, Sandra Ortega, Sebastián Robinson, Amaranta Robinson, Scott Robinson, Gustavo Rosete, Yaasib Vázquez.
             </p>
+
+            <!-- Marco animado con logos institucionales -->
+            <!-- <div class="flex flex-col gap-4 w-full">
+                <UMarquee pause-on-hover :overlay="false" :ui="{ root: '[--duration:240s]' }" >
+                    <NuxtImg v-for="logo in logos" :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20"  />
+                </UMarquee>
+            </div> -->
+
+            <!-- Logos institucionales -->
+            <div class="grid grid-cols-4 gap-4 place-content-center " >
+                <div v-for="logo in logos" class="text-center">
+                    <NuxtImg :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20 object-center"  />
+                </div>
+            </div>
         </UContainer>
     </div>
 </template>
@@ -150,8 +164,25 @@ definePageMeta({
     title: 'Acerca del sitio',
 })
 
+// Equipo de investigación
 const { data: investigacion } = useFetch('/api/investigacion')
 
+// Logos institucionales
+const logos = [
+    { text: 'Centro de Capacitación Cinematográfica', img: '01-ccc.png'},
+    { text: 'Cineteca Nacional', img: '02-cineteca.png'},
+    { text: 'Laboratorio de restauración digital Elena Sánchez Valenzuela', img: '03-laboratorio.png'},
+    { text: 'Comisión de Relaciones de la Asamblea de Autoridades Zapotecas y Chinantecas de la Sierra AZACHIS / K-Xhon Video Cine Zapoteca', img: '04-azachis.png'},
+    { text: 'Dirección General de Actividades Cinematográficas, Filmoteca UNAM', img: '05-filmoteca.png'},
+    { text: 'Dirección General de Culturas Populares, Indígenas y Urbanas', img: '06-culturas-populares.png'},
+    { text: 'DOCS MX', img: '07-docsmx.png'},
+    { text: 'Escuela Nacional de Artes Cinematográficas, UNAM', img: '08-enac.png'},
+    { text: 'Instituto Mexicano de la Cinematografía', img: '09-imcine.png'},
+    { text: 'Instituto Nacional de los Pueblos Indígenas', img: '10-inpi.png'},
+    { text: 'Universidad Autónoma Metropolitana, Azcapotzalco', img: '11-uam.png'},
+    { text: 'Coordinación de Servicios de Información', img: '12-cosei.png'},
+    { text: 'Instituto Mora, Laboratorio Audiovisual de Investigación Social', img: '13-mora-lais.png'},
+]
 </script>
 
 <style scoped>
