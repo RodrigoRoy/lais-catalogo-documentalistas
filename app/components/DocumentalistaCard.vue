@@ -1,26 +1,20 @@
-<!-- Representación breve de una documentalista, similar a un elemento Card -->
+<!-- Representación de una documentalista, usando como referencia el estilo en index.vue -->
 <template>
-    <div class="pb-2h-61 relative">
-        <!-- Fotografía con link -->
-        <NuxtLink :to="props?.data?.documentalista?.url ? `/${props.data.documentalista.url}` : '/'">
-            <img :src="props?.data?.documentalista?.imagen || 'https://picsum.photos/id/82/200/300'" class="rounded-t-lg rounded-lg outline-solid outline-1 outline-neutral-500/20 hover:outline-neutral-200">
+    <div class="relative bg-secondary-700">
+        <NuxtLink :to="data.url ? `/${data.url}` : ''">
+            <NuxtImg :src="`/documentalistas/${data.url}/${data.url}-0.jpg`" class="object-cover w-full max-h-50" />
+            <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->
+            <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-sm font-medium text-center p-1">
+                {{ data.nombre }}
+            </div>
         </NuxtLink>
-        
-        <!-- Texto básico / mínimo -->
-        <div class="relative bottom-0 left-0 transition duration-300 ease-in-out">
-            <p class="text-base font-semibold text-neutral mx-2 my-1">
-                {{ props?.data?.documentalista?.nombre || '' }}
-            </p>
-            <p class="text-md font-light text-neutral mx-2 -mt-1 mb-1">
-                {{ props?.data?.mencionResponsabilidad || '' }}
-            </p>
-        </div>
     </div>
 </template>
 
 <script setup>
 // Toda la información deriva del modelo en base de datos
 const props = defineProps({
-    data: { type: Object } //required: true
+    data: { type: Object }, //required: true
+    // mencion: { type: String }
 })
 </script>

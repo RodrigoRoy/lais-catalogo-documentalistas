@@ -16,6 +16,9 @@ export default defineEventHandler( async (event) => {
     // Aplicar ordenamiento (por default es orden alfabético)
     dbQuery = query?.sortBy ? dbQuery.sort(query?.sortBy) : dbQuery.sort('nombre')
 
+    // Incluir referencias de documentales
+    dbQuery = dbQuery.populate('documentales')
+
     try {
         return await dbQuery.exec()
     }

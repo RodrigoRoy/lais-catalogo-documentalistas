@@ -76,10 +76,8 @@ export const Documental = defineMongooseModel({
             externalUrl: {type: 'string', trim: true}, // link externo (ej.: https://www.youtube.com/watch?v=dQw4w9WgXcQ)
             comentario: { // reseña del documental
                 texto: {type: 'string', trim: true}, // párrafos de comentario/reseña
-                autoria: {type: 'string', trim: true}, // autor/a
                 fecha: {type: 'string', trim: true}, // fecha textual (ej.: 3 de febrero de 2024, Abril de 2024, 06/11/24) NOTA: tratar de usar Date datatype
-                semblanza: {type: 'string', trim: true}, // breve semblanza de autor/a (no mayor a 400 caracteres aprox.)
-                imagen: {type: 'string', trim: true}, // retrato de la persona autora
+                autoria: {type: Types.ObjectId, ref: 'Documentalista'}, // autor/a del equipo de investigación (modelo investigacion.schema.js)
             },
         },
     },

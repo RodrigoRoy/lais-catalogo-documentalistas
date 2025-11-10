@@ -30,6 +30,9 @@ export default defineEventHandler( async (event) => {
     else(query?.sortBy && query?.sortBy === 'titulo')
         dbQuery = dbQuery.sort('identificacion.titulo')
 
+    // Incluir referencias a documentalistas y autoría del comentario
+    dbQuery = dbQuery.populate('adicional.mujeres.documentalista', 'adicional.comentario.autoria')
+
     try {
         return await dbQuery.exec()
     }
