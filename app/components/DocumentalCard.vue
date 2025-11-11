@@ -6,7 +6,7 @@
             <div class="relative z-10">
                 <NuxtImg :src="data.adicional.imagen ? `/documentales/${data.adicional.imagen}` : '/documental.jpg'" class="h-50 w-full" />
                 <div class="absolute bottom-0 left-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 text-neutral-100 w-full">
-                    <p class="uppercase text-sm">
+                    <p class="uppercase text-xs sm:text-sm">
                         {{ data.identificacion.titulo || '' }}
                     </p>
                 </div>
@@ -22,7 +22,7 @@
             </div>
             
             <!-- Recuadro con más información al pasar el cursor encima -->
-            <div class="absolute bottom-0 translate-y-full text-xs bg-neutral-950 text-neutral-100 w-full px-2 pb-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div v-if="data.contenidoEstructura.sinopsis && data.identificacion.duracion && data.condicionesAccesoUso.idiomaOriginal" class="absolute bottom-0 translate-y-full text-xs bg-neutral-950 text-neutral-100 w-full px-2 pb-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p v-if="data.identificacion.duracion || data.condicionesAccesoUso.idiomaOriginal" class="mb-2 font-light">
                     {{ data.identificacion.duracion ? `${data.identificacion.duracion} min.` : '' }}
                     {{ data.condicionesAccesoUso.idiomaOriginal || '' }}

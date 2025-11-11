@@ -4,7 +4,7 @@
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Título como encabezado -->
-                <p class="text-3xl sm:pt-24 text-neutral-100 font-bold uppercase italic">
+                <p class="text-2xl sm:text-3xl pt-6 sm:pt-24 text-neutral-100 font-bold uppercase italic">
                     {{ documental.identificacion.titulo || '' }}
                 </p>
                 <p class="font-light">
@@ -38,7 +38,7 @@
         <UContainer>
             <!-- Documentalistas que participaron en el documental -->
             <div v-if="documental.adicional.mujeres && documental.adicional.mujeres.length > 0">
-                <p class="text-2xl text-left uppercase italic text-neutral-100 mb-4">
+                <p class="text-xl sm:text-2xl text-left uppercase italic text-neutral-100 mb-4">
                     Documentalistas
                 </p>
 
@@ -53,19 +53,21 @@
     </div>
 
     <!-- Sección para la ficha -->
-    <div class="py-12 bg-neutral-950 text-neutral-100">
+    <div class="relative py-12 bg-neutral-950 text-neutral-100">
+        <NuxtImg src="/icons/icon-blue-5.png" class="absolute right-4 top-2 max-w-15" />
+        <NuxtImg src="/icons/icon-white-9.png" class="absolute left-4 bottom-2 max-w-15" />
         <UContainer>
-            <p class="text-left text-2xl uppercase italic my-8">
+            <p class="text-left text-xl sm:text-2xl uppercase italic my-8">
                 Ficha de documentación
             </p>
             <!-- Todas las áreas de documentación -->
-            <div class="relative flex flex-col">
+            <div class="flex flex-col py-12">
                 <div class="columns-1 sm:columns-2">
                     <!-- Repetir cada campo de cada área (excepto "adicional") -->
                      <!-- Nota: template permite usar v-for y v-if a la vez -->
                     <template v-for="(area, keyArea) in documental">
                         <div v-if="areasDocumentacion.includes(keyArea)" class="mb-4 h-auto max-w-full">
-                            <p class="text-xl uppercase italic font-light mb-4">
+                            <p class="text-xl sm:text-lg uppercase italic font-light mb-4">
                                 Área de {{ format(keyArea).toLowerCase() }}
                             </p>
                             <p v-for="(campo, keyCampo) in area">
@@ -82,9 +84,10 @@
     </div>
     
     <!-- Sección para el comentario -->
-    <div v-if="documental.adicional.comentario?.texto" class="py-12 pl-8 bg-beige text-neutral-950">
+    <div v-if="documental.adicional.comentario?.texto" class="relative py-12 pl-8 bg-beige text-neutral-950">
+        <NuxtImg src="/icons/icon-black-0.png" class="absolute right-4 bottom-2 sm:bottom-4 max-w-30 sm:max-w-2/5" />
         <UContainer>
-            <p class="text-left text-2xl uppercase italic my-8">
+            <p class="text-left text-2xl sm:text-2xl uppercase italic my-8">
                 Comentario
             </p>
             <p class="w-4/5 mb-4 space-y-3" v-html="documental.adicional.comentario.texto"></p>

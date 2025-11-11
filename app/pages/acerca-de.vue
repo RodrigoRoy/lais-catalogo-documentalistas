@@ -1,7 +1,7 @@
 <template>
     <div class="bg-primary-700 pb-16">
         <UContainer>
-            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
                 Acerca del catálogo
             </h2>
         
@@ -19,7 +19,7 @@
 
     <div class="bg-neutral-950">
         <UContainer>
-            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
                 Equipo de investigación
             </h2>
 
@@ -31,7 +31,7 @@
                             {{ persona.nombre }}
                         </p>
                     </div>
-                    <div class="absolute bottom-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 w-full">
+                    <div class="absolute hidden sm:block bottom-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 w-full" >
                         <p class="text-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
                             {{ persona.semblanza }}
                         </p>
@@ -42,9 +42,9 @@
     </div>
 
     <div class="bg-beige text-neutral-950 pb-8">
-        <NuxtImg src="/collage2a.png" class="float-right top-5 max-w-160" />
+        <NuxtImg src="/collage2a.png" class="float-right top-5 w-full sm:max-w-160 mb-6 sm:mb-0" />
         <UContainer>
-            <h2 class="text-2xl font-bold text-center uppercase mb-2 pt-8 pb-4">
+            <h2 class="text-lg sm:text-xl sm:text-2xl font-bold text-center uppercase mb-2 pt-8 pb-4">
                 Créditos
             </h2>
     
@@ -52,7 +52,7 @@
                 Este trabajo de investigación se hizo <strong>de la mano de</strong> Alejandra Islas, Beatriz Mira, Bertha Navarro, Dana Rotberg, Gabriela Espinoza, Guadalupe Sánchez, Guadalupe Ferrer, Guadalupe Escandón, Justina Escandón, Juana Canseco, Josefina Morales, Maricarmen de Lara, Martha Colmenares, Maru Tamés (†), Laura Iñigo, Olivia Carrión (†), Penny Simpson, Rosa Martha Fernández, Sonia Fritz, Teófila Palafox, Teresa Carvajal y Trinidad Langarica. 
             </p>
     
-            <h3 class="uppercase text-lg font-medium mb-2">
+            <h3 class="uppercase text-md sm:text-lg font-medium mb-2">
                 Investigación
             </h3>
 
@@ -80,8 +80,8 @@
                 Colaboraciones de becarias/os y servicio social: Edgar Aguilar Espinoza, Astrid Eilyn Juárez Leal, Martín Mort García y Bertnard Martí León Albarrán.
             </p>
 
-            <h3 class="uppercase text-lg font-medium mb-2">
-                Página web
+            <h3 class="uppercase text-md sm:text-lg font-medium mb-2">
+                Página web <NuxtLink to="https://github.com/rodrigoRoy/lais-catalogo-documentalistas" target="_blank"><UTooltip text="GitHub"><UIcon name="i-lucide-github" class="size-4 ml-1" /></UTooltip></NuxtLink>
             </h3>
 
             <p class="mb-4">
@@ -100,7 +100,7 @@
                 Producción: Instituto Mora-LAIS, IMCINE-FOCINE 
             </p>
 
-            <h3 class="uppercase text-lg font-medium mb-2">
+            <h3 class="uppercase text-md sm:text-lg font-medium mt-6 sm:mt-2 mb-2">
                 Fuentes de investigación
             </h3>
 
@@ -141,15 +141,8 @@
                 Gabriela Sánchez Gutiérrez (Directora del Instituto Mora), Lourdes Roca (coordinadora Laboratorio Audiovisual de Investigación Social del Instituto Mora), personal de Recursos Materiales y Servicios Generales del Instituto Mora, Miguel Ángel Álvarez Aguilera, Federico Chao Puente, Guillermo Díaz Palafox, Angélica González Morón, Leticia Hernández Castillo, Gonzalo Infante, Nute Kuijin, Atania Díaz Herrenschmidt, Yubán Mena, Sergio Moreno, Juan Sebastián Moreno González, Nahum Leonardo Moreno González, Miguel Necoechea, Sandra Ortega, Sebastián Robinson, Amaranta Robinson, Scott Robinson, Gustavo Rosete, Yaasib Vázquez.
             </p>
 
-            <!-- Marco animado con logos institucionales -->
-            <!-- <div class="flex flex-col gap-4 w-full">
-                <UMarquee pause-on-hover :overlay="false" :ui="{ root: '[--duration:240s]' }" >
-                    <NuxtImg v-for="logo in logos" :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20"  />
-                </UMarquee>
-            </div> -->
-
             <!-- Logos institucionales -->
-            <div class="grid grid-cols-4 gap-4 place-content-center " >
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 place-content-center pt-6" >
                 <div v-for="logo in logos" class="text-center">
                     <NuxtImg :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20 object-center"  />
                 </div>

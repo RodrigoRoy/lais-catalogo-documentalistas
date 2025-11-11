@@ -8,7 +8,7 @@
         </div>
 
         <div class="absolute w-2/3 top-4 left-1/2 -translate-x-1/2 py-20 z-10">
-            <p class="text-3xl font-bold text-neutral-950 uppercase bg-beige pt-2">
+            <p class="text-xl sm:text-3xl font-bold text-neutral-950 uppercase bg-beige pt-2">
                 Catálogo Mujeres Documentalistas en México <br />(1970-1985)
             </p>
             <p class="text-lg font-light px-12 text-neutral-950 bg-beige pb-2 pt-4">
@@ -22,7 +22,7 @@
     <!-- Presentación de las documentalistas del catálogo -->
     <div class="relative bg-neutral-950 pb-12">
         <div class="relative py-12 ml-18">
-            <p class="text-left text-2xl font-bold text-collage uppercase">
+            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
                 Documentalistas
             </p>
             <NuxtImg src="/icons/icon-white-4.png" class="max-w-12" />
@@ -36,7 +36,7 @@
                     <NuxtLink :to="`/${documentalista.url}`">
                         <NuxtImg :src="`/documentalistas/${documentalista.url}/${documentalista.url}-0.jpg`" class="object-cover w-full max-h-50"></NuxtImg>
                         <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->
-                        <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-sm font-medium text-center p-1">
+                        <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-xs sm:text-sm font-medium text-center p-1">
                             {{ documentalista.nombre }}
                         </div>
                     </NuxtLink>

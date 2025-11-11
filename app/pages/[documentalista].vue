@@ -4,7 +4,7 @@
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Nombre como encabezado -->
-                <p class="text-3xl sm:pt-24 text-neutral-100 font-bold uppercase">
+                <p class="text-2xl sm:text-3xl pt-6 sm:pt-24 text-neutral-100 font-bold uppercase">
                     {{ documentalista.nombre }}
                 </p>
 
@@ -42,9 +42,11 @@
     </div>
 
     <!-- Galería de fotos -->
-    <div v-if="documentalista.galeria && documentalista.galeria.length > 0" class="py-12 bg-beige text-neutral-950">
+    <div v-if="documentalista.galeria && documentalista.galeria.length > 0" class="relative py-12 bg-beige text-neutral-950">
+        <NuxtImg src="/icons/icon-black-3.png" class="absolute right-4 top-6 max-w-20" />
+        <NuxtImg src="brocha.png" class="absolute right-4 bottom-0 max-w-50 sm:max-w-70" />
         <UContainer>
-            <p class="text-center text-2xl uppercase italic my-8">
+            <p class="text-center text-xl sm:text-2xl uppercase italic my-8">
                 Galería
             </p>
     
@@ -63,9 +65,10 @@
     </div>
 
     <!-- Documentales donde participó -->
-    <div v-if="documentalista.documentales && documentalista.documentales.length > 0" class="py-12 bg-neutral-950 text-neutral-100">
+    <div v-if="documentalista.documentales && documentalista.documentales.length > 0" class="relative py-12 bg-neutral-950 text-neutral-100">
+        <NuxtImg src="/icons/icon-white-6.png" class="absolute right-4 bottom-4 max-w-20" />
         <UContainer>
-            <p class="text-left text-2xl uppercase italic my-8">
+            <p class="text-left text-xl sm:text-2xl uppercase italic my-8">
                 Documentales
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-2">

@@ -1,7 +1,7 @@
 <template>
     <div class="bg-primary-700">
         <UContainer class="pb-4 pt-12">
-            <h2 class="text-2xl font-bold text-center uppercase py-8">
+            <h2 class="text-xl sm:text-2xl font-bold text-center uppercase py-8">
                 Filmografía
             </h2>
         
@@ -26,7 +26,7 @@
 
     <div class="bg-beige text-neutral-950 pt-8 pb-4">
         <UContainer>
-            <p class="uppercase text-lg mb-4 italic font-medium">
+            <p class="uppercase text-md sm:text-lg mb-4 italic font-medium">
                 Documentales
             </p>
 
