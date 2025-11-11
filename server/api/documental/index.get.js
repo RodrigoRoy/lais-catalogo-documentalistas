@@ -19,7 +19,7 @@ export default defineEventHandler( async (event) => {
         findQuery['identificacion.fecha'] = query.year
     // Filtrar por nombre de documentalista
     if(query?.documentalista)
-        findQuery['adicional.mujeres.documentalista'] = query.documentalista
+        findQuery['adicional.mujeres'] = query.documentalista
 
     // Query de MongoDB con posibles filtros
     let dbQuery = Documental.find(findQuery)
