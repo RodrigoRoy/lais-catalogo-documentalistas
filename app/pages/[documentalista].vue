@@ -1,6 +1,6 @@
 <template>
     <!-- Presentación inicial de la documentalista -->
-    <div class="w-full" :style="{'background-image': `url(/documentalistas/${documentalista.url}/${documentalista.imagen})`}">
+    <div class="w-full" :style="{'background-image': `url(/documentalistas/${documentalista.url}/${documentalista.imagen})`}" style="background-repeat: no-repeat;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Nombre como encabezado -->
@@ -19,14 +19,12 @@
                 </p>
 
                 <!-- Semblanza -->
-                <p v-if="documentalista.semblanza" class="my-6">
-                    {{ documentalista.semblanza }}
-                </p>
+                <p v-if="documentalista.semblanzaHTML" v-html="documentalista.semblanzaHTML" class="my-6 space-y-3"></p>
 
-                <!-- Clip de video -->
-                <div v-if="documentalista.clipVideo">
+                <!-- Participación en Seminario Bitácora -->
+                <!-- <div v-if="documentalista.clipVideo">
                     <UButton variant="soft" size="md" icon="i-mdi-youtube" :to="documentalista.clipVideo" target="_blank">Seminario Bitácora</UButton>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
