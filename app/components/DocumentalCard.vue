@@ -4,7 +4,9 @@
         <div class="relative group">
             <!-- Imagen de portada y título (sobre imagen con fondo degradado) -->
             <div class="relative z-10">
-                <NuxtImg :src="data.adicional?.imagen || 'https://picsum.photos/seed/picsum/300/200'" class="max-h-60" />
+                <NuxtImg :src="`/documentales/${data.adicional.imagen}` || 'https://picsum.photos/seed/picsum/300/200'" class="max-h-60" />
+                <!-- TO DO: Fotogramas de documentales -->
+                <!-- <NuxtImg :src="'https://picsum.photos/seed/picsum/300/200'" class="max-h-60" /> -->
                 <div class="absolute bottom-0 left-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 text-neutral-100 w-full">
                     <p class="uppercase text-sm">
                         {{ data.identificacion.titulo || '' }}
