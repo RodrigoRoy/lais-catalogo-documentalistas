@@ -1,6 +1,6 @@
 <template>
     <!-- Presentación inicial de la documentalista -->
-    <div class="w-full" :style="{'background-image': `url(/documentalistas/${documentalista.url}/${documentalista.imagen})`}" style="background-repeat: no-repeat;">
+    <div class="w-full" :style="{'background-image': `url(/documentalistas/${documentalista.url}/${documentalista.imagen})`}" style="background-repeat: no-repeat; background-size: cover;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Nombre como encabezado -->

@@ -78,12 +78,20 @@ const items = ref([
         to: '/gabriela-espinoza'
       },
       {
+        label: 'Guadalupe Ferrer',
+        to: '/guadalupe-ferrer'
+      },
+      {
         label: 'Guadalupe Sánchez',
         to: '/guadalupe-sanchez'
       },
       {
         label: 'Josefina Morales',
         to: '/josefina-morales'
+      },
+      {
+        label: 'Laura Iñigo',
+        to: '/laura-inigo'
       },
       {
         label: 'Maricarmen de Lara',
@@ -102,6 +110,10 @@ const items = ref([
         to: '/olivia-carrion'
       },
       {
+        label: 'Penny Simpson',
+        to: '/penny-simpson'
+      },
+      {
         label: 'Rosa Martha Fernández',
         to: '/rosa-martha-fernandez'
       },
@@ -110,8 +122,8 @@ const items = ref([
         to: '/sonia-fritz'
       },
       {
-        label: 'Teófila Palafox',
-        to: '/teofila-palafox'
+        label: 'Teresa Carvajal',
+        to: '/teresa-carvajal'
       },
       {
         label: 'Teófila Palafox, Justina Escandón, Juana Canseco',

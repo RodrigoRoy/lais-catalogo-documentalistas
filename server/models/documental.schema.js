@@ -67,17 +67,18 @@ export const Documental = defineMongooseModel({
         adicional: {
             imagen: {type: 'string', trim: true}, // referencia a la portada (ej.: "documental_1.jpg")
             clipVideo: {type: 'string', trim: true}, // referencia al clip de video (ej.: "documental_1.mp4")
-            mujeres: [{
-                documentalista: {type: Types.ObjectId, ref: 'Documentalista'}, // referencia al documental donde participó
-                mencionResponsabilidad: {type: 'string', trim: true}, // cargo que desempeñó en el documental (ej.: dirección, cámara, animación, sonido, etc.)
-            }],
+            // mujeres: [{
+            //     documentalista: {type: Types.ObjectId, ref: 'Documentalista'}, // referencia al documental donde participó
+            //     mencionResponsabilidad: {type: 'string', trim: true}, // cargo que desempeñó en el documental (ej.: dirección, cámara, animación, sonido, etc.)
+            // }],
+            mujeres: [ {type: Types.ObjectId, ref: 'Documentalista'} ], // referencia al documental donde participó
             etiquetas: {type: ['string'], trim: true}, // lista de 3 etiquetas/tags
             url: {type: 'string', trim: true}, // identificador URL (ej.: mujer-asi-es-la-vida, ayautla, vida-de-angel, etc.)
             externalUrl: {type: 'string', trim: true}, // link externo (ej.: https://www.youtube.com/watch?v=dQw4w9WgXcQ)
             comentario: { // reseña del documental
                 texto: {type: 'string', trim: true}, // párrafos de comentario/reseña
                 fecha: {type: 'string', trim: true}, // fecha textual (ej.: 3 de febrero de 2024, Abril de 2024, 06/11/24) NOTA: tratar de usar Date datatype
-                autoria: {type: Types.ObjectId, ref: 'Documentalista'}, // autor/a del equipo de investigación (modelo investigacion.schema.js)
+                autoria: {type: Types.ObjectId, ref: 'Investigacion'}, // autor/a del equipo de investigación (modelo investigacion.schema.js)
             },
         },
     },

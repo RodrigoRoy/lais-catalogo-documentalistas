@@ -87,20 +87,18 @@
             <p class="text-left text-2xl uppercase italic my-8">
                 Comentario
             </p>
-            <p class="w-4/5 mb-8">
-                {{ documental.adicional.comentario.texto || '' }}
-            </p>
+            <p class="w-4/5 mb-4 space-y-3" v-html="documental.adicional.comentario.texto"></p>
 
             <!-- Autor/a del comentario: -->
             <div class="mt-4 w-full sm:w-1/2">
-                <p v-if="documental.adicional.comentario?.fecha" class="text-xs text-neutral-100/60">
+                <p v-if="documental.adicional.comentario.fecha" class="text-xs text-neutral-900/60">
                     {{ documental.adicional.comentario.fecha  || '' }}
                 </p>
                 <p class="text-sm font-semibold uppercase">
-                    {{ documental.adicional.comentario.autoria?.nombre || '' }}
+                    {{ documental.adicional.comentario.autoria.nombre || '' }}
                 </p>
                 <p class="text-sm font-light ">
-                    {{ documental.adicional.comentario.autoria?.semblanza || '' }}
+                    {{ documental.adicional.comentario.autoria.semblanza || '' }}
                 </p>
             </div>
         </UContainer>

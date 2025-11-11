@@ -14,7 +14,7 @@ export default defineEventHandler( async (event) => {
     // Buscar por Id
     if(isMongoId){
         try {
-            return await Documental.findById(event.context.params.id).populate('adicional.mujeres.documentalista')
+            return await Documental.findById(event.context.params.id).populate('adicional.comentario.autoria').populate('adicional.mujeres').exec()
         }
         catch (error) {
             throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})
@@ -23,7 +23,7 @@ export default defineEventHandler( async (event) => {
     
     // Buscar por URL de la documental
     try {
-        return await Documental.findOne({ 'adicional.url': event.context.params.id }).populate('adicional.mujeres.documentalista')
+        return await Documental.findOne({ 'adicional.url': event.context.params.id }).populate('adicional.comentario.autoria').populate('adicional.mujeres').exec()
     }
     catch (error) {
         throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})

@@ -13,7 +13,7 @@ export default defineEventHandler( async (event) => {
     // Buscar por Id
     if(isMongoId){
         try {
-            return await Documentalista.findById(event.context.params.id).populate('documentales')
+            return await Documentalista.findById(event.context.params.id).populate('documentales').exec()
         }
         catch (error) {
             throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})
@@ -22,7 +22,7 @@ export default defineEventHandler( async (event) => {
     
     // Buscar por URL de la documentalista
     try {
-        return await Documentalista.findOne({ url: event.context.params.id }).populate('documentales')
+        return await Documentalista.findOne({ url: event.context.params.id }).populate('documentales').exec()
     }
     catch (error) {
         throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})

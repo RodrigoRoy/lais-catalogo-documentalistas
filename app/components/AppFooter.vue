@@ -4,7 +4,7 @@
             <div class="block text-xs">
                 Este sitio está bajo una licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional.
                 <br /> 
-                <em>Los contenidos son manifestaciones de libre expresión y no reflejan una postura institucional.</em>
+                <em>Este Catálogo en línea tiene fines educativos y culturales, no persigue fines de lucro. Los contenidos son manifestaciones de libre expresión y no reflejan una postura institucional.</em>
             </div>
         </template>
 
