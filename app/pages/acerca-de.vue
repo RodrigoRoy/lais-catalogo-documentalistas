@@ -155,6 +155,7 @@
 definePageMeta({
     layout: 'fluid',
     title: 'Acerca del sitio',
+    colorMode: 'dark',
 })
 
 // Equipo de investigación

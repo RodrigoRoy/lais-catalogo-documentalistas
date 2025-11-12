@@ -50,7 +50,8 @@
 <script setup>
 definePageMeta({
     title: 'Filmografía',
-    layout: 'fluid'
+    layout: 'fluid',
+    colorMode: 'dark',
 })
 
 // Variables para el filtrado de documentales

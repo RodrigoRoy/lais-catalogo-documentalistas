@@ -111,7 +111,8 @@
 <script setup>
 definePageMeta({
     title: 'Documental',
-    layout: 'fluid'
+    layout: 'fluid',
+    colorMode: 'dark',
 })
 
 // Para obtener nombre/título del documental desde URL

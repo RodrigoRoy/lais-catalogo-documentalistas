@@ -84,6 +84,7 @@
 definePageMeta({
     title: 'Documentalista',
     layout: 'fluid',
+    colorMode: 'dark',
 })
 
 const route = useRoute()
