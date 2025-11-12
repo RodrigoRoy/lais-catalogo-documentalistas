@@ -41,7 +41,7 @@ export function format(uriField){
         resenaBiografica: 'Reseña biográfica',
 
         contenidoEstructura: 'Contenido y estructura',
-        sinopsis: 'Sinópsis',
+        sinopsis: 'Sinopsis',
         descriptorOnomastico: 'Descriptor onomástico',
         descriptorToponimico: 'Descriptor toponímico',
         descriptorCronologico: 'Descriptor cronológico',

@@ -87,7 +87,8 @@
 <script setup>
 definePageMeta({
     layout: 'fluid', // ancho total sin margenes
-    title: 'Catálogo Mujeres Documentalistas en México (1970-1985)'
+    title: 'Catálogo Mujeres Documentalistas en México (1970-1985)',
+    colorMode: 'dark',
 })
 
 // Documentalistas principales, petición en base de datos

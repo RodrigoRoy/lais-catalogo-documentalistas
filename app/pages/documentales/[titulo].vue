@@ -85,7 +85,7 @@
     
     <!-- Sección para el comentario -->
     <div v-if="documental.adicional.comentario?.texto" class="relative py-12 pl-8 bg-beige text-neutral-950">
-        <NuxtImg src="/icons/icon-black-0.png" class="absolute right-4 bottom-2 sm:bottom-4 max-w-30 sm:max-w-2/5" />
+        <NuxtImg src="/icons/icon-black-0.png" class="absolute right-4 bottom-2 sm:bottom-4 max-w-30 sm:max-w-1/5" />
         <UContainer>
             <p class="text-left text-2xl sm:text-2xl uppercase italic my-8">
                 Comentario

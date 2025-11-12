@@ -2,13 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: [
-    '@nuxt/image',
-    '@nuxt/ui',
-    'nuxt-mongoose',
-    'nuxt-mongoose',
-    '@nuxt/fonts'
-  ],
+  modules: ['@nuxt/image', '@nuxt/ui', 'nuxt-mongoose', 'nuxt-mongoose', '@nuxt/fonts', '@nuxtjs/color-mode'],
 
   app: {
     baseURL: "/mujeresdocumentalistas",
@@ -22,6 +16,12 @@ export default defineNuxtConfig({
 
   // Part of NuxtUI config: https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css
   css: ['~/assets/css/main.css'],
+
+  // Nuxt Color Mode config: https://color-mode.nuxtjs.org/usage/configuration
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark'
+  },
 
   // Nuxt Mongoose config: https://docs.arashsheyda.me/nuxt-mongoose/getting-started/configuration
   mongoose: {
