@@ -18,7 +18,7 @@
             <!-- <UButton class="mt-18 uppercase font-light text-secondary-800 z-30 bg-beige" variant="link" color="secondary" >Ver catálogo</UButton> -->
         </div>
     </div>
-
+    
     <!-- Presentación de las documentalistas del catálogo -->
     <div class="relative bg-neutral-950 pb-12">
         <div class="relative py-12 ml-18">
@@ -43,11 +43,46 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="absolute right-16 bottom-4 flex">
             <NuxtImg src="/icons/icon-red-2.png" class="max-w-12 mr-2" /><NuxtImg src="/icons/icon-red-3.png" class="max-w-12" />
         </div>
     </div>
+    
+    <!-- Sección de opiniones del proyecto -->
+    <!-- <div class="bg-beige text-neutral-950 pb-12">
+        <div class="pt-12 pb-6 ml-18">
+            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase ">
+                Opiniones
+            </p>
+        </div>
+        
+        <UMarquee :overlay="false" class="py-8" :ui="{ root: '[--duration:120s]'}" >
+            <div class="flex flex-row w-full">
+                <div v-for="opinion in opiniones" class="relative grow-7 text-center max-w-full sm:w-1/3 mx-4">
+                    <UIcon name="i-lucide-quote" class="absolute left-0 size-8 text-neutral-950/20" />
+                    <p class="mb-2">
+                        {{ opinion.texto }}
+                    </p>
+                    <p class="text-xs font-bold text-neutral-950/70 ">
+                        {{ opinion.nombre || '' }}
+                    </p>
+                    <p class="text-xs font-light italic text-neutral-950/30">
+                        {{ moment(opinion.fecha).format('DD/MM/YYYY')  || '' }}
+                    </p>
+
+                </div>
+            </div>
+        </UMarquee>
+
+        <UContainer class="relative">
+            <div class="absolute right-4">
+                <p>
+                    <UIcon name="i-lucide-message-square-text" class="left-0 size-4 text-neutral-950 mr-2" />Comparte tu <ULink to="https://forms.cloud.microsoft/r/68Q9LhNEau" target="_blank" class="text-primary-700 hover:text-primary-900">opinión del Catálogo</ULink>
+                </p>
+            </div>
+        </UContainer>
+    </div> -->
 
     <!-- Números y cifras del proyecto -->
     <!-- <div class="text-center h-120">
@@ -91,26 +126,31 @@ definePageMeta({
     colorMode: 'dark',
 })
 
+// import moment from 'moment'
+
 // Documentalistas principales, petición en base de datos
-const {data:documentalistas} = await useFetch('/api/documentalistas', {method: 'get', query: {sortBy: 'nombre', principales: 'true'}})
+const { data:documentalistas } = await useFetch('/api/documentalistas', {method: 'get', query: {sortBy: 'nombre', principales: 'true'}})
+
+// Opiniones sobre el proyecto
+// const { data: opiniones } = await useFetch('/api/opiniones')
 
 // Números y crifras del proyecto
-const cifras = {
-    totales: [
-        {text: 'documentalistas', number: '26'},
-        {text: 'colectivos', number: '6'},
-        {text: 'documentales', number: '128'},
-        {text: 'horas de película', number: '250'},
-    ],
-    actividad: [
-        {text: 'realizadoras', number: '20'},
-        {text: 'editoras', number: '12'},
-        {text: 'camarógrafas', number: '17'},
-        {text: 'sonidistas', number: '4'},
-        {text: 'fotógrafas', number: '15'},
-        {text: 'animadoras', number: '2'},
-    ],
-}
+// const cifras = {
+//     totales: [
+//         {text: 'documentalistas', number: '26'},
+//         {text: 'colectivos', number: '6'},
+//         {text: 'documentales', number: '128'},
+//         {text: 'horas de película', number: '250'},
+//     ],
+//     actividad: [
+//         {text: 'realizadoras', number: '20'},
+//         {text: 'editoras', number: '12'},
+//         {text: 'camarógrafas', number: '17'},
+//         {text: 'sonidistas', number: '4'},
+//         {text: 'fotógrafas', number: '15'},
+//         {text: 'animadoras', number: '2'},
+//     ],
+// }
 </script>
 
 <style scoped>
