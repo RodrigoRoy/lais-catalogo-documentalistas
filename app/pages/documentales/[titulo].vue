@@ -1,6 +1,6 @@
 <template>
     <!-- Presentación inicial del documental -->
-    <div class="w-full" :style="{'background-image': `url(/documentales/${documental.adicional.imagen})`}" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
+    <div class="w-full" :style="{'background-image': backgroundImage}" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Título como encabezado -->
@@ -120,6 +120,13 @@ const route = useRoute()
 
 // Información del documental en base de datos
 const { data: documental } = await useFetch(`/api/documental/${route.params.titulo}`)
+
+// Optimized image URL from NuxtImage manually generated: https://image.nuxt.com/usage/use-image
+const img = useImage()
+const backgroundImage = computed(() => {
+    const imgUrl = img(`/documentales/${documental.value.adicional.imagen}`)
+    return `url('${imgUrl}')`
+})
 
 // Áreas válidas para la ficha de documentación 
 const areasDocumentacion = ['identificacion', 'contexto', 'contenidoEstructura', 'condicionesAccesoUso', 'documentacionAsociada', 'notas', 'controlDescripcion',]
