@@ -32,7 +32,7 @@
         <!-- Mosaico con los retratos y nombres de la documentalistas principales -->
         <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
             <div v-for="documentalista in documentalistas">
-                <div class="relative bg-secondary-700 hover:border-2 hover:border-secondary-800">
+                <div class="relative bg-secondary-700 opacity-100 sm:opacity-70 hover:opacity-100 transition-opacity duration-500 hover:border-4 hover:border-secondary-800">
                     <NuxtLink :to="`/${documentalista.url}`">
                         <NuxtImg :src="`/documentalistas/${documentalista.url}/${documentalista.url}-0.jpg`" class="object-cover w-full max-h-50"></NuxtImg>
                         <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->

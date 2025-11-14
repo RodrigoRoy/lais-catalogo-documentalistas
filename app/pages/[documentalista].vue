@@ -1,6 +1,6 @@
 <template>
     <!-- Presentación inicial de la documentalista -->
-    <div class="w-full" :style="{'background-image': `url(/documentalistas/${documentalista.url}/${documentalista.imagen})`}" style="background-repeat: no-repeat; background-size: cover;">
+    <div class="w-full" :style="{'background-image': backgroundImage}" style="background-repeat: no-repeat; background-size: cover;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
             <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
                 <!-- Nombre como encabezado -->
@@ -33,9 +33,9 @@
     <div v-if="documentalista.clipVideo" class="py-8 bg-neutral-950 text-neutral-100 text-center">
         <UContainer>
             <div class="flex justify-center items-center content-center  ">
-                <video controls :poster="`/videos/${documentalista.url}.jpg`" class="max-w-2/3 center" >
-                    <source :src="`/videos/${documentalista.clipVideo}`" type="video/mp4" />
-                    <p>Tu navegador no soporta la reproducción del video pero puedes <a :href="`/videos/${documentalista.clipVideo}`" :download="`/videos/${documentalista.clipVideo}`">descargar el video</a></p>
+                <video controls :poster="videoPoster" class="w-full sm:max-w-2/3 center" >
+                    <source :src="videoSource" type="video/mp4" />
+                    <p>Tu navegador no soporta la reproducción del video pero puedes <a :href="videoSource" :download="videoSource">descargar el video</a></p>
                 </video>
             </div>
         </UContainer>
@@ -87,8 +87,24 @@ definePageMeta({
     colorMode: 'dark',
 })
 
+// Información de la documentalista
 const route = useRoute()
 const { data: documentalista } = await useFetch(`/api/documentalistas/${route.params.documentalista}`)
+
+// Optimized image URL from NuxtImage manually generated: https://image.nuxt.com/usage/use-image
+const img = useImage()
+const backgroundImage = computed(() => {
+    const imgUrl = img(`/documentalistas/${documentalista.value.url}/${documentalista.value.imagen}`)
+    return `url('${imgUrl}')`
+})
+const videoPoster = computed(() => {
+    return img(`/videos/${documentalista.value.url}.jpg`)
+})
+
+// Using proxy can mismatch the video URL, this could fix that
+const url = useRequestURL()
+const proxyServer = 'https://lais.mora.edu.mx/mujeresdocumentalistas'
+const videoSource = url.hostname === 'localhost' ? `/videos/${documentalista.value.clipVideo}` : `${proxyServer}/videos/${documentalista.value.clipVideo}`
 </script>
 
 <style scoped>
