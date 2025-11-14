@@ -144,8 +144,20 @@
             <!-- Logos institucionales -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 place-content-center pt-6" >
                 <div v-for="logo in logos" class="text-center">
-                    <NuxtImg :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20 object-center"  />
+                    <NuxtImg :src="`/logos/${logo.img}`" :alt="logo.text" class="max-h-20 mx-auto"  />
                 </div>
+            </div>
+
+            <div class="relative text-center text-xs sm:text-sm mt-6 sm:mt-0 pt-12 pb-6 uppercase">
+                <p>
+                    Proyecto Realizado con el apoyo del:
+                </p>
+                <p>
+                    <strong>Instituto Mexicano de Cinematografía</strong> a través del programa:
+                    <br />
+                    <strong>Fomento al Cine Mexicano (FOCINE)</strong>
+                </p>
+                <NuxtImg src="/logos/09-imcine.png" class="mt-2 mx-auto" />
             </div>
         </UContainer>
     </div>
@@ -171,7 +183,7 @@ const logos = [
     { text: 'Dirección General de Culturas Populares, Indígenas y Urbanas', img: '06-culturas-populares.png'},
     { text: 'DOCS MX', img: '07-docsmx.png'},
     { text: 'Escuela Nacional de Artes Cinematográficas, UNAM', img: '08-enac.png'},
-    { text: 'Instituto Mexicano de la Cinematografía', img: '09-imcine.png'},
+    // { text: 'Instituto Mexicano de la Cinematografía', img: '09-imcine.png'},
     { text: 'Instituto Nacional de los Pueblos Indígenas', img: '10-inpi.png'},
     { text: 'Universidad Autónoma Metropolitana, Azcapotzalco', img: '11-uam.png'},
     { text: 'Coordinación de Servicios de Información', img: '12-cosei.png'},
