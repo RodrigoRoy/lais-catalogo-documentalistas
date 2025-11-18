@@ -29,20 +29,45 @@
             <NuxtImg src="/icons/icon-white-8.png" class="absolute right-4 top-6 max-w-20" />
         </div>
         
-        <!-- Mosaico con los retratos y nombres de la documentalistas principales -->
+        <!-- Mosaico con los retratos y nombres de las documentalistas principales -->
         <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
-            <div v-for="documentalista in documentalistas">
-                <div class="relative bg-secondary-700 opacity-100 sm:opacity-70 hover:opacity-100 transition-opacity duration-500 hover:border-4 hover:border-secondary-800">
+            <div v-for="documentalista in documentalistas.originales">
+                <Documentalista :data="documentalista" />
+            </div>
+        </div>
+
+        <!-- PROPUESTA PARA INCLUIR Y ORGANIZAR AL RESTO DE DOCUMENTALISTAS -->
+        <!-- <div class="py-12 ml-18">
+            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
+                Preservadoras
+            </p>
+            <NuxtImg src="/icons/icon-white-3.png" class="max-w-12" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
+            <div v-for="documentalista in documentalistas.preservadoras">
+                <Documentalista :data="documentalista" />
+            </div>
+        </div>
+
+        <div class="py-12 ml-18">
+            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
+                <span class="text-xl">+</span>Documentalistas
+            </p>
+            <NuxtImg src="/icons/icon-white-9.png" class="max-w-10" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
+            <div v-for="documentalista in documentalistas.masDocumentalistas" class="">
+                <div class="opacity-100 sm:opacity-70 hover:opacity-100 transition-opacity duration-500 hover:border-4 hover:border-secondary-800 h-10 sm:h-14 md:h-10">
                     <NuxtLink :to="`/${documentalista.url}`">
-                        <NuxtImg :src="`/documentalistas/${documentalista.url}/${documentalista.url}-0.jpg`" class="object-cover w-full max-h-50"></NuxtImg>
-                        <!-- El nombre está sobre la imagen y posicionada abajo al centro, con fondo ligeramente transparente para legibilidad -->
-                        <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-stone-950/90 to-stone-900/0 text-stone-200 uppercase text-xs sm:text-sm font-medium text-center p-1">
+                        <div class="text-neutral-100 uppercase text-xs sm:text-sm font-medium text-center p-1 my-auto">
                             {{ documentalista.nombre }}
                         </div>
                     </NuxtLink>
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <div class="absolute right-16 bottom-4 flex">
             <NuxtImg src="/icons/icon-red-2.png" class="max-w-12 mr-2" /><NuxtImg src="/icons/icon-red-3.png" class="max-w-12" />
@@ -129,7 +154,7 @@ definePageMeta({
 // import moment from 'moment'
 
 // Documentalistas principales, petición en base de datos
-const { data:documentalistas } = await useFetch('/api/documentalistas', {method: 'get', query: {sortBy: 'nombre', principales: 'true'}})
+const { data:documentalistas } = await useFetch('/api/documentalistas/shortlist')
 
 // Opiniones sobre el proyecto
 // const { data: opiniones } = await useFetch('/api/opiniones')

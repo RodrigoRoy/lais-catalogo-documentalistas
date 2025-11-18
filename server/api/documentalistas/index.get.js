@@ -1,7 +1,7 @@
 /**
 * Obtener documentalistas en base de datos
 * @param {string} req.query.sortBy Ordenamiento opcional por campo (ej.: fechaNacimiento, -fechaNacimiento, nombre, -nombreCompleto)
-* @param {boolean} req.query.principales Filtra solamente documentalistas principales (el único valor permitido es "true", falso en otro caso)
+* @param {boolean} req.query.principales Filtra documentalistas por tipo "principales" (con imagen en index/portada)
 */
 export default defineEventHandler( async (event) => {
     const query = getQuery(event)
@@ -12,6 +12,8 @@ export default defineEventHandler( async (event) => {
     // Filtrar por documentalistas principales
     if(query?.principales && query?.principales === 'true')
         dbQuery = Documentalista.find({principal: true})
+    else if(query?.principales && query?.principales === 'false')
+        dbQuery = Documentalista.find({principal: false})
 
     // Aplicar ordenamiento (por default es orden alfabético)
     dbQuery = query?.sortBy ? dbQuery.sort(query?.sortBy) : dbQuery.sort('nombre')

@@ -11,7 +11,7 @@
                 <div>
                     <!-- <USelect v-model="tema" :items="temas" icon="i-mdi-movie-open-outline" size="md" placeholder="Tema" color="white" class="w-48 mb-2 mr-1 sm:mr-4 bg-neutral-100 text-neutral-950" @change="refresh" /> -->
                     <USelect v-model="year" :items="years" icon="i-mdi-calendar-blank" size="md" placeholder="Año" color="white" class="w-48 mb-2 mr-1 sm:mr-4 bg-neutral-100 text-neutral-950" @change="refresh" />
-                    <USelect v-model="documentalista" :items="documentalistas" value-key="_id" label-key="nombre" icon="i-mdi-face-woman" size="md" placeholder="Documentalista" color="white" class="w-48 mr-1 bg-neutral-100 text-neutral-950" @change="refresh" />
+                    <!-- <USelect v-model="documentalista" :items="documentalistas" value-key="_id" label-key="nombre" icon="i-mdi-face-woman" size="md" placeholder="Documentalista" color="white" class="w-48 mr-1 bg-neutral-100 text-neutral-950" @change="refresh" /> -->
                     <!-- Botón de borrado -->
                     <UButton icon="i-lucide-delete" variant="link" v-if="tema || year || documentalista" @click="reset" class="w-48 py-2" color="neutral" />
                 </div>

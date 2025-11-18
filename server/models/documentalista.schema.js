@@ -24,6 +24,7 @@ export const Documentalista = defineMongooseModel({
             descripcion: {type: 'string', trim: true}, // breve pie de página (1-2 líneas de texto)
         }],
         principal: {type: 'boolean', default: false}, // indica si se tiene suficiente información de ella
+        preservadora: {type: 'boolean', default: false}, // indica si es una preservadora/conservadora
     },
     
     // Opciones adicionales del modelo
