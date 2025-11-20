@@ -90,7 +90,7 @@
             <p class="text-left text-2xl sm:text-2xl uppercase italic my-8">
                 Comentario
             </p>
-            <p class="w-4/5 mb-4 space-y-3" v-html="documental.adicional.comentario.texto"></p>
+            <div class="w-4/5 mb-4 space-y-3" v-html="documental.adicional.comentario.texto"></div>
 
             <!-- Autor/a del comentario: -->
             <div class="mt-4 w-full sm:w-1/2">

@@ -19,7 +19,7 @@
                 </p>
 
                 <!-- Semblanza -->
-                <p v-if="documentalista.semblanzaHTML" v-html="documentalista.semblanzaHTML" class="my-6 space-y-3"></p>
+                <div v-if="documentalista.semblanzaHTML" v-html="documentalista.semblanzaHTML" class="my-6 sdivace-y-3"></div>
 
                 <!-- Participación en Seminario Bitácora -->
                 <!-- <div v-if="documentalista.clipVideo">
