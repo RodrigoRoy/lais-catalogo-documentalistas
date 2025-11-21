@@ -52,15 +52,18 @@
     
             <!-- Masonry style: no se dejan espacios en blanco entre imagenes -->
             <div class="columns-1 sm:columns-2 space-y-4 justify-center items-center content-center ">
-                <div v-for="foto in documentalista.galeria" class="relative">
+                <div v-for="(foto, index) in documentalista.galeria" class="relative">
                     <!-- Fotografía -->
-                    <NuxtImg :src="`/documentalistas/${route.params.documentalista}/${foto.imagen}`" :alt="foto.descripcion" class="center w-3/4" style="display: block; margin-left: auto; margin-right: auto;" />
+                    <NuxtImg :src="`/documentalistas/${route.params.documentalista}/${foto.imagen}`" :alt="foto.descripcion" @click="showImg(index)" class="center w-3/4 cursor-pointer" style="display: block; margin-left: auto; margin-right: auto;" />
                     <!-- Pie de fotografía -->
                     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 bg-linear-to-t from-neutral-950/90 to-transparent text-neutral-200 text-xs font-light text-justify px-2 pt-6 pb-2">
                         {{ foto.descripcion }}
                     </div>
                 </div>
             </div>
+
+            <!-- Plugin para hacer zoom y revisar foto individualmente -->
+            <VueEasyLightbox :visible="visibleRef" :imgs="galleryImgs" :index="indexRef" @hide="onHide" rotateDisabled />
         </UContainer>
     </div>
 
@@ -105,6 +108,36 @@ const videoPoster = computed(() => {
 const url = useRequestURL()
 const proxyServer = 'https://lais.mora.edu.mx/mujeresdocumentalistas'
 const videoSource = url.hostname === 'localhost' ? `/videos/${documentalista.value.clipVideo}` : `${proxyServer}/videos/${documentalista.value.clipVideo}`
+
+// ----------
+// Variables para VueEasyLightbox (galeria de fotos)
+// ----------
+const visibleRef = ref(false)
+const indexRef = ref(0)
+
+// Cambia los atributos de la galería (imagen-->src, descripcion-->title)
+const galleryImgs = documentalista.value.galeria.map( (foto) => {
+    return {
+        src: img(`/documentalistas/${documentalista.value.url}/${foto.imagen}`), // optimized image URL form NuxtImage
+        title: foto.descripcion
+    }
+})
+
+/**
+ * Muestra VueEasyLightbox modal con la imagen correspondiente
+ * @param index {number} Indice de la fotografía que se desea mostrar
+ */
+function showImg(index){
+    indexRef.value = index
+    visibleRef.value = true
+}
+
+/**
+ * Oculta VueEasyLightbox modal
+ */
+function onHide(){
+    visibleRef.value = false
+}
 </script>
 
 <style scoped>
