@@ -1,8 +1,9 @@
 <template>
     <!-- Presentación inicial de la documentalista -->
-    <div class="w-full" :style="{'background-image': backgroundImage}" style="background-repeat: no-repeat; background-size: cover;">
+    <div class="w-full" :style="{'background-image': backgroundImage}" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
         <div class="bg-linear-to-b from-neutral-900/70 via-neutral-950/50 to-neutral-950">
-            <div class="min-h-dvh w-5/6 sm:w-3/5 mx-6 sm:mx-12">
+            <!-- Altura del contenedor div depende si son documentalistas con o sin foto de portada (principales/preservadoras o no) -->
+            <div class="w-5/6 sm:w-3/5 mx-6 sm:mx-12" :class="{'min-h-dvh': documentalista.principal || documentalista.preservadora, 'min-h-1/2': !documentalista.principal && !documentalista.preservadora}">
                 <!-- Nombre como encabezado -->
                 <p class="text-2xl sm:text-3xl pt-6 sm:pt-24 text-neutral-100 font-bold uppercase">
                     {{ documentalista.nombre }}
@@ -19,7 +20,7 @@
                 </p>
 
                 <!-- Semblanza -->
-                <div v-if="documentalista.semblanzaHTML" v-html="documentalista.semblanzaHTML" class="my-6 sdivace-y-3"></div>
+                <div v-if="documentalista.semblanzaHTML" v-html="documentalista.semblanzaHTML" class="py-6 sdivace-y-3"></div>
 
                 <!-- Participación en Seminario Bitácora -->
                 <!-- <div v-if="documentalista.clipVideo">
@@ -68,7 +69,7 @@
     </div>
 
     <!-- Documentales donde participó -->
-    <div v-if="documentalista.documentales && documentalista.documentales.length > 0" class="relative py-12 bg-neutral-950 text-neutral-100">
+    <div v-if="documentalista.documentales && documentalista.documentales.length > 0" class="relative pt-12 pb-28 bg-neutral-950 text-neutral-100">
         <NuxtImg src="/icons/icon-white-6.png" class="absolute right-4 bottom-4 max-w-20" />
         <UContainer>
             <p class="text-left text-xl sm:text-2xl uppercase italic my-8">

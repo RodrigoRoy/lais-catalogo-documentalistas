@@ -2,7 +2,7 @@
     <!-- Sección de presentación del proyecto -->
     <div class="relative text-center h-dvh bg-beige ">
         <div class="z-0">
-            <NuxtImg src="collage1a.png" class="absolute left-0 bottom-0 max-w-1/3" />
+            <NuxtImg src="collage1a.png" class="absolute left-0 bottom-10 sm:bottom-0 max-w-1/2 sm:max-w-1/3" />
             <NuxtImg src="collage1b.png" class="absolute right-0 bottom-0 max-w-1/2" />
             <NuxtImg src="collage2b.png" class="absolute right-0 top-0 max-w-1/2" />
         </div>
@@ -31,13 +31,26 @@
         
         <!-- Mosaico con los retratos y nombres de las documentalistas principales -->
         <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
-            <div v-for="documentalista in documentalistas.originales">
+            <div v-for="documentalista in documentalistas.principales">
                 <Documentalista :data="documentalista" />
             </div>
         </div>
 
-        <!-- PROPUESTA PARA INCLUIR Y ORGANIZAR AL RESTO DE DOCUMENTALISTAS -->
-        <!-- <div class="py-12 ml-18">
+        <!-- Lista con el resto de documentalistas (sin imagen de portada) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20 pt-12">
+            <div v-for="documentalista in documentalistas.masDocumentalistas" class="">
+                <div class="opacity-100 sm:opacity-70 hover:opacity-100 transition-opacity duration-500 hover:border-4 hover:border-secondary-800 h-10 sm:h-14 md:h-10">
+                    <NuxtLink :to="`/${documentalista.url}`">
+                        <div class="text-neutral-100 uppercase text-xs sm:text-sm font-medium text-center p-1 my-auto">
+                            {{ documentalista.nombre }}
+                        </div>
+                    </NuxtLink>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preservadoras (mismo layout que Documentalistas) -->
+        <div class="py-12 ml-18">
             <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
                 Preservadoras
             </p>
@@ -50,24 +63,6 @@
             </div>
         </div>
 
-        <div class="py-12 ml-18">
-            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
-                <span class="text-xl">+</span>Documentalistas
-            </p>
-            <NuxtImg src="/icons/icon-white-9.png" class="max-w-10" />
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
-            <div v-for="documentalista in documentalistas.masDocumentalistas" class="">
-                <div class="opacity-100 sm:opacity-70 hover:opacity-100 transition-opacity duration-500 hover:border-4 hover:border-secondary-800 h-10 sm:h-14 md:h-10">
-                    <NuxtLink :to="`/${documentalista.url}`">
-                        <div class="text-neutral-100 uppercase text-xs sm:text-sm font-medium text-center p-1 my-auto">
-                            {{ documentalista.nombre }}
-                        </div>
-                    </NuxtLink>
-                </div>
-            </div>
-        </div> -->
         
         <div class="absolute right-16 bottom-4 flex">
             <NuxtImg src="/icons/icon-red-2.png" class="max-w-12 mr-2" /><NuxtImg src="/icons/icon-red-3.png" class="max-w-12" />

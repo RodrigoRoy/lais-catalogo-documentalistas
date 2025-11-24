@@ -2,7 +2,7 @@
   <UApp>
     <AppHeader />
 
-    <UMain>
+    <UMain class="bg-neutral-950">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>

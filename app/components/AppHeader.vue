@@ -38,102 +38,24 @@
 </template>
 
 <script setup>
-// Query de búsqueda
-const searchTerm = ref('')
+// ---------- Lista de documentalistas ----------
+// Documentalistas principales, petición en base de datos
+const { data:documentalistas } = await useFetch('/api/documentalistas/shortlist')
 
-// Estado de apertura del modal de búsqueda
-const openModal = ref(false)
-
-// Resultados de la base de datos
-const { data: results, status, refresh } = await useFetch('/api/search', {method: 'get', query: {q: searchTerm}})
+// Usar sintaxis de UNavigationMenu para la lista de documentalistas (subáreas/children)
+const documentalistasList = documentalistas.value.originales.map( (documentalista) => {
+    return {
+        label: documentalista.nombre,
+        to: documentalista.url
+    }
+})
 
 // Opciones de navegación
 const items = ref([
   {
     label: 'Documentalistas',
     icon: 'i-ri-women-line',
-    children: [
-      {
-        label: 'Alejandra Islas',
-        to: '/alejandra-islas'
-      },
-      {
-        label: 'Beatriz Mira',
-        to: '/beatriz-mira'
-      },
-      {
-        label: 'Bertha Navarro',
-        to: '/bertha-navarro'
-      },
-      {
-        label: 'Dana Rotbert',
-        to: '/dana-rotberg'
-      },
-      {
-        label: 'Elvira Palafox, Guadalupe Escandón, Timotea Michelín',
-        to: '/elvira-guadalupe-timotea'
-      },
-      {
-        label: 'Gabriela Espinoza',
-        to: '/gabriela-espinoza'
-      },
-      {
-        label: 'Guadalupe Ferrer',
-        to: '/guadalupe-ferrer'
-      },
-      {
-        label: 'Guadalupe Sánchez',
-        to: '/guadalupe-sanchez'
-      },
-      {
-        label: 'Josefina Morales',
-        to: '/josefina-morales'
-      },
-      {
-        label: 'Laura Iñigo',
-        to: '/laura-inigo'
-      },
-      {
-        label: 'Maricarmen de Lara',
-        to: '/maricarmen-lara'
-      },
-      {
-        label: 'Martha Colmenares',
-        to: '/martha-colmenares'
-      },
-      {
-        label: 'Maru Tamés',
-        to: '/maru-tames'
-      },
-      {
-        label: 'Olivia Carrión',
-        to: '/olivia-carrion'
-      },
-      {
-        label: 'Penny Simpson',
-        to: '/penny-simpson'
-      },
-      {
-        label: 'Rosa Martha Fernández',
-        to: '/rosa-martha-fernandez'
-      },
-      {
-        label: 'Sonia Fritz',
-        to: '/sonia-fritz'
-      },
-      {
-        label: 'Teresa Carvajal',
-        to: '/teresa-carvajal'
-      },
-      {
-        label: 'Teófila Palafox, Justina Escandón, Juana Canseco',
-        to: '/teofila-justina-juana'
-      },
-      {
-        label: 'Trinidad Langarica',
-        to: '/trinidad-langarica'
-      },
-    ]
+    children: documentalistasList
   },
   {
     label: 'Filmografía',
@@ -151,5 +73,15 @@ const items = ref([
     to: '/acerca-de'
   }
 ])
+
+// ---------- Búsqueda ----------
+// Query de búsqueda
+const searchTerm = ref('')
+
+// Estado de apertura del modal de búsqueda
+const openModal = ref(false)
+
+// Resultados de la base de datos
+const { data: results, status, refresh } = await useFetch('/api/search', {method: 'get', query: {q: searchTerm}})
 </script>
 

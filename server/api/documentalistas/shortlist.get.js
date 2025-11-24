@@ -5,6 +5,7 @@
 *   principales: [Documentalista]
 *   preservadoras: [Documentalista]
 *   masDocumentalistas: [Documentalista]
+*   originales: [Documentalista]
 * }
 */
 export default defineEventHandler( async (event) => {
