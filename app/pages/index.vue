@@ -2,9 +2,9 @@
     <!-- Sección de presentación del proyecto -->
     <div class="relative text-center h-dvh bg-beige ">
         <div class="z-0">
-            <NuxtImg src="collage1a.png" class="absolute left-0 bottom-10 sm:bottom-0 max-w-1/2 sm:max-w-1/3" />
-            <NuxtImg src="collage1b.png" class="absolute right-0 bottom-0 max-w-1/2" />
-            <NuxtImg src="collage2b.png" class="absolute right-0 top-0 max-w-1/2" />
+            <NuxtImg src="collage1a.webp" class="absolute left-0 bottom-10 sm:bottom-0 max-w-1/2 sm:max-w-1/3" />
+            <NuxtImg src="collage1b.webp" class="absolute right-0 bottom-0 max-w-1/2" />
+            <NuxtImg src="collage2b.webp" class="absolute right-0 top-0 max-w-1/2" />
         </div>
 
         <div class="absolute w-2/3 top-4 left-1/2 -translate-x-1/2 py-20 z-10">
@@ -12,7 +12,7 @@
                 Catálogo Mujeres Documentalistas en México <br />(1970-1985)
             </p>
             <p class="text-lg font-light px-12 text-neutral-950 bg-beige pb-2 pt-4">
-                Reúne a realizadoras, camarógrafas, sonidistas, editoras, guionistas, fotógrafas, productoras, animadoras, etc., que participaron en el quehacer documental en dicho periodo. A todas ellas les llamamos Mujeres Documentalistas.
+                Este catálogo reúne a realizadoras, camarógrafas, sonidistas, editoras, guionistas, fotógrafas, productoras, animadoras y preservadoras que participaron en el quehacer documental entre 1970 y 1985. A todas ellas las llamamos Mujeres Documentalistas.
             </p>
     
             <!-- <UButton class="mt-18 uppercase font-light text-secondary-800 z-30 bg-beige" variant="link" color="secondary" >Ver catálogo</UButton> -->

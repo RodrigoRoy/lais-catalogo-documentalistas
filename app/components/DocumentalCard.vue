@@ -4,7 +4,7 @@
         <div class="relative group">
             <!-- Imagen de portada y título (sobre imagen con fondo degradado) -->
             <div class="relative z-10">
-                <NuxtImg :src="data.adicional.imagen ? `/documentales/${data.adicional.imagen}` : '/documental.jpg'" class="h-50 w-full" />
+                <NuxtImg quality="30" sizes="300px sm:400px" format="webp" :src="data.adicional.imagen ? `/documentales/${data.adicional.imagen}` : '/documental.jpg'" class="h-50 w-full" />
                 <div class="absolute bottom-0 left-0 bg-linear-to-t from-neutral-950/90 to-transparent p-2 text-neutral-100 w-full">
                     <p class="uppercase text-xs sm:text-sm">
                         {{ data.identificacion.titulo || '' }}

@@ -45,7 +45,7 @@
     <!-- Galería de fotos -->
     <div v-if="documentalista.galeria && documentalista.galeria.length > 0" class="relative py-12 bg-beige text-neutral-950">
         <NuxtImg src="/icons/icon-black-3.png" class="absolute right-4 top-6 max-w-20" />
-        <NuxtImg src="brocha.png" class="absolute right-4 bottom-0 max-w-50 sm:max-w-70" />
+        <NuxtImg src="brocha.webp" class="absolute right-4 bottom-0 max-w-50 sm:max-w-70" />
         <UContainer>
             <p class="text-center text-xl sm:text-2xl uppercase italic my-8">
                 Galería

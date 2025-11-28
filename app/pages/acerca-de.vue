@@ -51,7 +51,7 @@
     </div>
 
     <div class="bg-beige text-neutral-950 pb-8">
-        <NuxtImg src="/collage2a.png" class="float-right top-5 w-full sm:max-w-160 mb-6 sm:mb-0" />
+        <NuxtImg src="/collage2a.webp" class="float-right top-5 w-full sm:max-w-160 mb-6 sm:mb-0" />
         <UContainer>
             <h2 class="text-lg sm:text-2xl font-bold text-center uppercase mb-2 pt-8 pb-4">
                 Créditos

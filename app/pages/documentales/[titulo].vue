@@ -22,12 +22,13 @@
                 <p class="my-6">
                     {{ documental.contenidoEstructura.sinopsis || '' }}
                 </p>
-                <div class="flex justify-between">
+                <!-- Etiquetas (propuesta) -->
+                <!-- <div class="flex justify-between">
                     <div v-if="documental.adicional.etiquetas && documental.adicional.etiquetas.length > 0">
                         <UBadge v-for="etiqueta in documental.adicional.etiquetas" color="primary" variant="outline" size="md" class="rounded-full mr-2">{{ etiqueta }}</UBadge>
                     </div>
                     <UButton v-if="documental.adicional.urlExterna" variant="soft" size="md" icon="i-mdi-launch" :to="documental.adicional.urlExterna" target="_blank">Ver en línea</UButton>
-                </div>
+                </div> -->
             </div>
         </div>
 
