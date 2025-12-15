@@ -13,6 +13,12 @@
             </div>
     
             <div class="text-xs bg-neutral-950 text-neutral-100 px-2 pb-1 z-10">
+                <!-- Etiquetas -->
+                <!-- <div class="flex justify-between mb-2">
+                    <div v-if="data.adicional.etiquetas && data.adicional.etiquetas.length > 0">
+                        <UBadge v-for="etiqueta in data.adicional.etiquetas" variant="outline" color="transparent" size="sm" class="rounded-full mr-2 mb-1 text-white border-1 border-white">{{ etiqueta }}</UBadge>
+                    </div>
+                </div> -->
                 <p class="line-clamp-1 font-extralight mb-1">
                     {{ data.identificacion.pais || '' }} {{ data.identificacion.fecha || '' }}
                 </p>
