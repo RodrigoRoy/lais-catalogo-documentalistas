@@ -7,25 +7,32 @@
                 <p class="text-2xl sm:text-3xl pt-6 sm:pt-24 text-neutral-100 font-bold uppercase italic">
                     {{ documental.identificacion.titulo || '' }}
                 </p>
+                <!-- Autoría / realización -->
                 <p class="font-light">
-                    {{ documental.identificacion.realizacion || '' }}. 
+                    {{ documental.identificacion.realizacion || '' }} 
                 </p>
+                <!-- Fecha y país -->
                 <p class="mt-4">
-                    {{ documental.identificacion.pais || '' }}
-                    <span v-if="documental.identificacion.pais">, </span>
-                    {{ documental.identificacion.fecha || '' }}
+                    <span v-if="documental.identificacion.fecha" class="mr-3"><UIcon name="i-mdi-calendar-blank" class="size-4" /> {{ documental.identificacion.fecha }}</span>
+                    <span v-if="documental.identificacion.pais"><UIcon name="i-mdi-map-marker" class="size-4" /> {{ documental.identificacion.pais }}</span>
                 </p>
+                <!-- Duración e idioma -->
                 <p class="mb-4">
-                    <UIcon name="i-mdi-clock-time-three-outline" class="size-4" /> {{ documental.identificacion.duracion || '' }} min.
-                    <UIcon name="i-mdi-comment-text" class="size-4 ml-3" /> {{ documental.condicionesAccesoUso.idiomaOriginal || '' }}
+                    <span v-if="documental.identificacion.duracion" class="mr-3"><UIcon name="i-mdi-clock-time-three-outline" class="size-4" /> {{ documental.identificacion.duracion }} min.</span>
+                    <span v-if="documental.condicionesAccesoUso.idiomaOriginal"><UIcon name="i-mdi-comment-text" class="size-4" /> {{ documental.condicionesAccesoUso.idiomaOriginal || '' }}</span>
                 </p>
+                <!-- Sinópsis -->
                 <p class="my-6">
                     {{ documental.contenidoEstructura.sinopsis || '' }}
                 </p>
                 <!-- Etiquetas -->
                 <!-- <div class="flex justify-between">
                     <div v-if="documental.adicional.etiquetas && documental.adicional.etiquetas.length > 0">
-                        <UBadge v-for="etiqueta in documental.adicional.etiquetas" color="transparent" variant="outline" size="md" class="rounded-full mr-2 border-1 border-white">{{ etiqueta }}</UBadge>
+                        <span v-for="etiqueta in documental.adicional.etiquetas">
+                            <UBadge v-if="etiqueta != ''" color="transparent" variant="outline" size="md" class="rounded-full mr-2 border border-white">
+                                {{ etiqueta }}
+                            </UBadge>
+                        </span>
                     </div>
                 </div> -->
             </div>
@@ -75,6 +82,8 @@
                                     {{ format(keyCampo) }}:
                                 </span>
                                 {{ campo }}
+                                <!-- Agregar "min." solo para duración, ya que solo es el número entero representado en BD -->
+                                <span v-if="keyCampo === 'duracion'"> min.</span>
                             </p>
                         </div>
                     </template>
