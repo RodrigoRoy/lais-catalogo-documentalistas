@@ -6,6 +6,7 @@
 *   preservadoras: [Documentalista]
 *   masDocumentalistas: [Documentalista]
 *   originales: [Documentalista]
+*   sinPreservadoras: [Documentalista]
 * }
 */
 export default defineEventHandler( async (event) => {
@@ -18,8 +19,9 @@ export default defineEventHandler( async (event) => {
         const preservadoras = await Documentalista.find({principal: true, preservadora: true}, selectedField).sort({ nombre: 1 })
         const masDocumentalistas = await Documentalista.find({principal: false}, selectedField).sort({ nombre: 1 })
         const originales = await Documentalista.find({principal: true}, selectedField).sort({ nombre: 1 })
+        const sinPreservadoras = await Documentalista.find({preservadora: false}, selectedField).sort({ nombre: 1 })
         
-        return {principales: principales, preservadoras: preservadoras, masDocumentalistas: masDocumentalistas, originales: originales }
+        return {principales: principales, preservadoras: preservadoras, masDocumentalistas: masDocumentalistas, originales: originales, sinPreservadoras: sinPreservadoras }
     }
     catch (error) {
         throw createError({statusCode: error.statusCode, statusMessage: error.statusMessage, message: error.message})

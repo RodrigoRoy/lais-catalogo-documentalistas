@@ -43,7 +43,7 @@
 const { data:documentalistas } = await useFetch('/api/documentalistas/shortlist')
 
 // Usar sintaxis de UNavigationMenu para la lista de documentalistas (subáreas/children)
-const documentalistasList = documentalistas.value.originales.map( (documentalista) => {
+const documentalistasList = documentalistas.value.sinPreservadoras.map( (documentalista) => {
     return {
         label: documentalista.nombre,
         to: documentalista.url

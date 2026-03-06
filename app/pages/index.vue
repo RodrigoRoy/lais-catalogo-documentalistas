@@ -69,41 +69,6 @@
         </div>
     </div>
     
-    <!-- Sección de opiniones del proyecto -->
-    <!-- <div class="bg-beige text-neutral-950 pb-12">
-        <div class="pt-12 pb-6 ml-18">
-            <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase ">
-                Opiniones
-            </p>
-        </div>
-        
-        <UMarquee :overlay="false" class="py-8" :ui="{ root: '[--duration:120s]'}" >
-            <div class="flex flex-row w-full">
-                <div v-for="opinion in opiniones" class="relative grow-7 text-center max-w-full sm:w-1/3 mx-4">
-                    <UIcon name="i-lucide-quote" class="absolute left-0 size-8 text-neutral-950/20" />
-                    <p class="mb-2">
-                        {{ opinion.texto }}
-                    </p>
-                    <p class="text-xs font-bold text-neutral-950/70 ">
-                        {{ opinion.nombre || '' }}
-                    </p>
-                    <p class="text-xs font-light italic text-neutral-950/30">
-                        {{ moment(opinion.fecha).format('DD/MM/YYYY')  || '' }}
-                    </p>
-
-                </div>
-            </div>
-        </UMarquee>
-
-        <UContainer class="relative">
-            <div class="absolute right-4">
-                <p>
-                    <UIcon name="i-lucide-message-square-text" class="left-0 size-4 text-neutral-950 mr-2" />Comparte tu <ULink to="https://forms.cloud.microsoft/r/68Q9LhNEau" target="_blank" class="text-primary-700 hover:text-primary-900">opinión del Catálogo</ULink>
-                </p>
-            </div>
-        </UContainer>
-    </div> -->
-
     <!-- Números y cifras del proyecto -->
     <!-- <div class="text-center h-120">
         <p class="text-2xl font-bold text-primary-700 uppercase py-12">
@@ -150,9 +115,6 @@ definePageMeta({
 
 // Documentalistas principales, petición en base de datos
 const { data:documentalistas } = await useFetch('/api/documentalistas/shortlist')
-
-// Opiniones sobre el proyecto
-// const { data: opiniones } = await useFetch('/api/opiniones')
 
 // Números y crifras del proyecto
 // const cifras = {

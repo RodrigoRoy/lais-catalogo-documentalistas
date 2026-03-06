@@ -56,14 +56,14 @@ definePageMeta({
 
 // Variables para el filtrado de documentales
 const tema = ref('')
-const { data: temas} = useFetch('/api/documental/tagList')
+// const { data: temas} = useFetch('/api/util/tags')
 // const temas = ['Trabajo doméstico', 'Educación', 'Pueblos originarios', 'Diversidad sexual', 'Alimentación', 'Despojo territorial', 'Naturaleza', 'Luchas campesinas', 'Derechos de la mujer']
 
 const year = ref('')
-const { data: years} = useFetch('/api/documental/yearList')
+const { data: years} = useFetch('/api/util/years')
 
 const documentalista = ref('')
-const { data:documentalistas } = await useFetch('/api/documentalistas/idList')
+// const { data:documentalistas } = await useFetch('/api/documentalistas/idList')
 
 // Variables para el ordenamiento de documentales
 const sort = ref('fecha')
