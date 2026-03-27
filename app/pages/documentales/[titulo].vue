@@ -40,24 +40,22 @@
 
     </div>
 
-    <!-- Sección para documentalistas -->
-    <div v-if="documental.adicional.mujeres && documental.adicional.mujeres.length > 0" class="py-12 bg-primary-700">
+    <!-- Sección para documentalistas que participaon en el documental (Propuesta) -->
+    <!-- <div v-if="documentalistas && documentalistas.length > 0" class="py-12 bg-neutral-950 text-neutral-100">
         <UContainer>
-            <!-- Documentalistas que participaron en el documental -->
-            <div v-if="documental.adicional.mujeres && documental.adicional.mujeres.length > 0">
+            <div>
                 <p class="text-xl sm:text-2xl text-left uppercase italic text-neutral-100 mb-4">
                     Documentalistas
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0 mx-20">
-                <!-- <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-3"> -->
-                    <div v-for="mujer in documental.adicional.mujeres">
-                        <DocumentalistaCard :data="mujer.documentalista" />
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-2">
+                    <div v-for="documentalista in documentalistas">
+                        <DocumentalistaCard :data="documentalista" />
                     </div>
                 </div>
             </div>
         </UContainer>
-    </div>
+    </div> -->
 
     <!-- Sección para la ficha -->
     <div class="relative py-12 bg-neutral-950 text-neutral-100">
@@ -129,6 +127,9 @@ const route = useRoute()
 
 // Información del documental en base de datos
 const { data: documental } = await useFetch(`/api/documental/${route.params.titulo}`)
+
+// Lista de documentalistas que participaron en el documental
+const { data:documentalistas } = await useFetch(`/api/util/documentalistas/${documental.value._id}`)
 
 // Optimized image URL from NuxtImage manually generated: https://image.nuxt.com/usage/use-image
 const img = useImage()
