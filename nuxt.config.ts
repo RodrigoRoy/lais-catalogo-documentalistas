@@ -2,7 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/ui', 'nuxt-mongoose', 'nuxt-mongoose', '@nuxt/fonts', '@nuxtjs/color-mode', 'nuxt-easy-lightbox'],
+  modules: [
+    '@nuxt/image',
+    '@nuxt/ui',
+    'nuxt-mongoose',
+    'nuxt-mongoose',
+    '@nuxt/fonts',
+    '@nuxtjs/color-mode',
+    'nuxt-easy-lightbox',
+    '@vueuse/nuxt',
+  ],
 
   app: {
     baseURL: "/mujeresdocumentalistas",

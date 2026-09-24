@@ -81,7 +81,7 @@ const items = ref([
         to: { path:'/acerca-de', hash: '#creditos' }
       },
       {
-        label: 'Forma de citar este catálogo',
+        label: 'Forma de citar',
         to: { path:'/acerca-de', hash: '#citar' }
       }
     ]

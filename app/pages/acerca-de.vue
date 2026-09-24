@@ -176,15 +176,33 @@
                     Forma de citar este catálogo:
                 </h3>
 
-                <p>
-                    García Torres, Lilia (coord.) (2025). Catálogo de mujeres documentalistas en México 1970-1985 [página web]. Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. <NuxtLink to="https://lais.mora.edu.mx/mujeresdocumentalistas/" target="_blank" class="text-blue-500 hover:underline">https://lais.mora.edu.mx/mujeresdocumentalistas/</NuxtLink>
-                </p>
+                <div class="flex gap-4">
+                    <p class="flex-1">
+                        Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. (2025). Catálogo Mujeres Documentalistas en México (1970-1985) [página web]. <NuxtLink to="https://lais.mora.edu.mx/mujeresdocumentalistas/" target="_self" class="text-blue-500 hover:underline">https://lais.mora.edu.mx/mujeresdocumentalistas/</NuxtLink>
+                    </p>
+    
+                    <div class="flex-none">
+                        <div v-if="isSupported">
+                            <UButton @click="copy(source)" variant="solid" icon="i-lucide-clipboard" class="primary-900 text-neutral-100">
+                                <span v-if="!copied">Copiar</span>
+                                <span v-else>¡Copiado!</span>
+                            </UButton>
+                        </div>
+                        <p v-else>
+                            <strong>Nota:</strong> Su navegador no soporta la función de copiar al portapapeles.
+                        </p>
+                    </div>
+                </div>
+
+                
             </div>
         </UContainer>
     </div>
 </template>
 
 <script setup>
+import { useClipboard } from '@vueuse/core'
+
 definePageMeta({
     layout: 'fluid',
     title: 'Acerca del sitio',
@@ -210,6 +228,10 @@ const logos = [
     { text: 'Coordinación de Servicios de Información', img: '12-cosei.png'},
     { text: 'Instituto Mora, Laboratorio Audiovisual de Investigación Social', img: '13-mora-lais.png'},
 ]
+
+// Citar el catálogo
+const source = 'Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. (2025). Catálogo Mujeres Documentalistas en México (1970-1985) [página web]. https://lais.mora.edu.mx/mujeresdocumentalistas/'
+const { text, copy, copied, isSupported } = useClipboard({ source })
 </script>
 
 <style scoped>
