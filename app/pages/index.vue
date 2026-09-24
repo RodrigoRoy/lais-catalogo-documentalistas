@@ -20,7 +20,7 @@
     </div>
     
     <!-- Presentación de las documentalistas del catálogo -->
-    <div class="relative bg-neutral-950 pb-12">
+    <div id="documentalistas" class="relative bg-neutral-950 pb-12">
         <div class="relative py-12 ml-18">
             <p class="text-left text-xl sm:text-2xl font-bold text-collage uppercase">
                 Documentalistas

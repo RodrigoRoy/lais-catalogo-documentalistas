@@ -46,7 +46,7 @@ const { data:documentalistas } = await useFetch('/api/documentalistas/shortlist'
 const documentalistasList = documentalistas.value.sinPreservadoras.map( (documentalista) => {
     return {
         label: documentalista.nombre,
-        to: documentalista.url
+        to: `/${documentalista.url}`
     }
 })
 
@@ -55,6 +55,7 @@ const items = ref([
   {
     label: 'Documentalistas',
     icon: 'i-ri-women-line',
+    to: { path:'/', hash: '#documentalistas' },
     children: documentalistasList
   },
   {
@@ -62,15 +63,28 @@ const items = ref([
     icon: 'i-bx-camera-movie',
     to: '/filmografia',
   },
-  // {
-  //   label: 'Línea de tiempo',
-  //   icon: 'i-material-symbols-nest-clock-farsight-analog-outline',
-  //   to: '/linea-de-tiempo',
-  // },
   {
     label: 'Acerca de',
     icon: 'mdi-information-variant-circle-outline',
-    to: '/acerca-de'
+    to: '/acerca-de',
+    children: [
+      {
+        label: 'Acerca del catálogo',
+        to: { path:'/acerca-de', hash: '#catalogo' }
+      },
+      {
+        label: 'Equipo de investigación',
+        to: { path:'/acerca-de', hash: '#investigacion' }
+      },
+      {
+        label: 'Créditos',
+        to: { path:'/acerca-de', hash: '#creditos' }
+      },
+      {
+        label: 'Forma de citar este catálogo',
+        to: { path:'/acerca-de', hash: '#citar' }
+      }
+    ]
   }
 ])
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-primary-700 pb-16">
+    <div id="catalogo" class="bg-primary-700 pb-16">
         <UContainer>
             <h2 class="text-xl sm:text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
                 Acerca del catálogo
@@ -26,7 +26,7 @@
         </UContainer>
     </div>
 
-    <div class="bg-neutral-950">
+    <div id="investigacion" class="bg-neutral-950">
         <UContainer>
             <h2 class="text-xl sm:text-2xl font-bold text-center uppercase mb-2 pt-16 pb-4">
                 Equipo de investigación
@@ -50,7 +50,7 @@
         </UContainer>
     </div>
 
-    <div class="bg-beige text-neutral-950 pb-8">
+    <div id="creditos" class="bg-beige text-neutral-950 pb-8">
         <NuxtImg src="/collage2a.webp" class="float-right top-5 w-full sm:max-w-160 mb-6 sm:mb-0" />
         <UContainer>
             <h2 class="text-lg sm:text-2xl font-bold text-center uppercase mb-2 pt-8 pb-4">
@@ -167,6 +167,18 @@
                     <strong>Fomento al Cine Mexicano (FOCINE)</strong>
                 </p>
                 <NuxtImg src="/logos/09-imcine.png" class="mt-2 mx-auto" />
+            </div>
+
+
+            <!-- Forma de citar -->
+            <div id="citar" class="mt-8">
+                <h3 class="uppercase text-md sm:text-lg font-medium mt-6 sm:mt-2 mb-2">
+                    Forma de citar este catálogo:
+                </h3>
+
+                <p>
+                    García Torres, Lilia (coord.) (2025). Catálogo de mujeres documentalistas en México 1970-1985 [página web]. Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. <NuxtLink to="https://lais.mora.edu.mx/mujeresdocumentalistas/" target="_blank" class="text-blue-500 hover:underline">https://lais.mora.edu.mx/mujeresdocumentalistas/</NuxtLink>
+                </p>
             </div>
         </UContainer>
     </div>

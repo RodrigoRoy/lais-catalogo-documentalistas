@@ -14,6 +14,13 @@ export default defineNuxtConfig({
     }
   },
 
+  // Enable smooth movement for anchor links
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
+
   // Part of NuxtUI config: https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css
   css: ['~/assets/css/main.css'],
 
