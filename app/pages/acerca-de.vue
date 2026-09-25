@@ -175,13 +175,15 @@
                 <h3 class="uppercase text-md sm:text-lg font-medium mt-6 sm:mt-2 mb-2">
                     Forma de citar este catálogo:
                 </h3>
-
-                <div class="flex gap-4">
-                    <p class="flex-1">
-                        Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. (2025). Catálogo Mujeres Documentalistas en México (1970-1985) [página web]. <NuxtLink to="https://lais.mora.edu.mx/mujeresdocumentalistas/" target="_self" class="text-blue-500 hover:underline">https://lais.mora.edu.mx/mujeresdocumentalistas/</NuxtLink>
-                    </p>
-    
-                    <div class="flex-none">
+                
+                <!-- Pequeño grid para mostrar correctamente entre desktop y mobile -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-6" >
+                    <div class="sm:col-span-3">
+                        <p>
+                            Laboratorio Audiovisual de Investigación Social-Instituto Mora. (noviembre de 2025). <em>Catálogo Mujeres Documentalistas en México (1970-1985)</em> [página web]. <NuxtLink to="https://lais.mora.edu.mx/mujeresdocumentalistas/" target="_self" class="text-blue-500 hover:underline">https://lais.mora.edu.mx/mujeresdocumentalistas/</NuxtLink>
+                        </p>
+                    </div>
+                    <div>
                         <div v-if="isSupported">
                             <UButton @click="copy(source)" variant="solid" icon="i-lucide-clipboard" class="primary-900 text-neutral-100">
                                 <span v-if="!copied">Copiar</span>
@@ -193,15 +195,14 @@
                         </p>
                     </div>
                 </div>
-
-                
             </div>
+
         </UContainer>
     </div>
 </template>
 
 <script setup>
-import { useClipboard } from '@vueuse/core'
+import { useClipboard } from '@vueuse/core' // Copiar texto al portapapeles
 
 definePageMeta({
     layout: 'fluid',
@@ -230,7 +231,7 @@ const logos = [
 ]
 
 // Citar el catálogo
-const source = 'Laboratorio Audiovisual de Investigación Social-Instituto Mora/FOCINE-IMCINE. (2025). Catálogo Mujeres Documentalistas en México (1970-1985) [página web]. https://lais.mora.edu.mx/mujeresdocumentalistas/'
+const source = 'Laboratorio Audiovisual de Investigación Social-Instituto Mora. (noviembre de 2025). Catálogo Mujeres Documentalistas en México (1970-1985) [página web]. https://lais.mora.edu.mx/mujeresdocumentalistas/'
 const { text, copy, copied, isSupported } = useClipboard({ source })
 </script>
 

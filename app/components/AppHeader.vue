@@ -70,19 +70,19 @@ const items = ref([
     children: [
       {
         label: 'Acerca del catálogo',
-        to: { path:'/acerca-de', hash: '#catalogo' }
+        to: '/acerca-de#catalogo'
       },
       {
         label: 'Equipo de investigación',
-        to: { path:'/acerca-de', hash: '#investigacion' }
+        to: '/acerca-de#investigacion'
       },
       {
         label: 'Créditos',
-        to: { path:'/acerca-de', hash: '#creditos' }
+        to: '/acerca-de#creditos'
       },
       {
         label: 'Forma de citar',
-        to: { path:'/acerca-de', hash: '#citar' }
+        to: '/acerca-de#citar'
       }
     ]
   }
